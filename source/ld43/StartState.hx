@@ -1,4 +1,3 @@
-	
 package ld43;
 
 import flixel.FlxG;

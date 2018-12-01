@@ -7,11 +7,9 @@ import flixel.FlxObject;
 import flixel.system.FlxSound;
 
 
-class Object extends FlxSprite
+class Snowball extends FlxSprite
 {
         private var name:String;
-        private var type:String;
-
 
         var playState:PlayState;
         
@@ -19,20 +17,16 @@ class Object extends FlxSprite
 	{
 
                 
-                loadGraphic(AssetPaths.player__png, true, 129, 178);
+                loadGraphic(AssetPaths.snowball__png, true, 129, 178);
                 setFacingFlip(FlxObject.LEFT, true, false);
 		setFacingFlip(FlxObject.RIGHT, false, false);
                 
-                animation.add("standing",[0,1,2,3],5,true);
-                animation.add("running",[4,5,6,7,8,9],12,true);
-                animation.add("jumping",[10],1,true);
-                animation.add("landing",[11],1,false);
-                animation.add("terminalActivate",[12,13,13,13],2,false);
-                animation.add("terminalDeactivate",[13,12],2,false);
-                
+                animation.add("flying",[0,1,2,3],5,true);
+                animation.add("groundImpact",[4,5,6,7,8,9],12,true);
+                animation.add("enemyImpact",[10],1,true);                
                 animation.add("dancing",[0,10,0,11],5,true);
-                
-                animation.play("standing");
+               
+                animation.play("");
                 this.maxVelocity.x = 650;
 		this.maxVelocity.y = 800;
                 this.xAcceleration = 2000;
@@ -66,5 +60,13 @@ class Object extends FlxSprite
 	public function getType() {
                 return type;
         }
+
+        public function doThrow() {
+                animation.play("flying");
+                launchSound.play
+        }
+        public function setFlyingState() {
+        }
+                
 	
 }

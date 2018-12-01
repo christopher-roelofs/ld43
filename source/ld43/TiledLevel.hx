@@ -20,8 +20,8 @@ import flixel.input.gamepad.FlxGamepad;
 import flash.display.BitmapData;
 
 /**
- * @author Samuel Batista
- */
+* @author Samuel Batista
+*/
 class TiledLevel extends TiledMap
 {
 	// For each "Tile Layer" in the map, you must define a "tileset" property which contains the name of a tile sheet image 
@@ -45,7 +45,7 @@ class TiledLevel extends TiledMap
 	private var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
 	
- 
+        
 	
 	public function new(tiledLevel:Dynamic, state:MapState)
 	{
@@ -74,8 +74,8 @@ class TiledLevel extends TiledMap
 			var tileSheetName:String = tileLayer.properties.get("tileset");
 			
 			if (tileSheetName == null)
-				throw "'tileset' property not defined for the '" + tileLayer.name + "' layer. Please add the property to the layer.";
-				
+			throw "'tileset' property not defined for the '" + tileLayer.name + "' layer. Please add the property to the layer.";
+			
 			var tileSet:TiledTileSet = null;
 			for (ts in tilesets)
 			{
@@ -87,9 +87,9 @@ class TiledLevel extends TiledMap
 			}
 			
 			if (tileSet == null)
-				throw "Tileset '" + tileSheetName + " not found. Did you misspell the 'tilesheet' property in " + tileLayer.name + "' layer?";
+			throw "Tileset '" + tileSheetName + " not found. Did you misspell the 'tilesheet' property in " + tileLayer.name + "' layer?";
 
-				
+			
 			var imagePath 		= new Path(tileSet.imageSource);
 			var processedPath 	= c_PATH_LEVEL_TILESHEETS + imagePath.file + "." + imagePath.ext;
 			
@@ -104,7 +104,7 @@ class TiledLevel extends TiledMap
 			else
 			{
 				if (collidableTileLayers == null)
-					collidableTileLayers = new Array<FlxTilemap>();
+				collidableTileLayers = new Array<FlxTilemap>();
 				
 				foregroundTiles.add(tilemap);
 				collidableTileLayers.push(tilemap);
@@ -119,7 +119,7 @@ class TiledLevel extends TiledMap
 		for (layer in layers)
 		{
 			if (layer.type != TiledLayerType.OBJECT)
-				continue;
+			continue;
 			var objectLayer:TiledObjectLayer = cast layer;
 
 			//collection of images layer
@@ -142,7 +142,7 @@ class TiledLevel extends TiledMap
 				}
 			}
 		}
-	
+	        
 	}
 	
 	private function loadImageObject(object:TiledObject)
@@ -188,42 +188,42 @@ class TiledLevel extends TiledMap
 
 		// objects in tiled are aligned bottom-left (top-left in flixel)
 		if (o.gid != -1)
-			y -= g.map.getGidOwner(o.gid).tileHeight;
+		y -= g.map.getGidOwner(o.gid).tileHeight;
 		
 		switch (o.type.toLowerCase())
 		{
 			case "player_start":
-				player = new Player(x,y);
-				FlxG.camera.follow(player);
-				group.add(player);
+			player = new Player(x,y,levelState);
+			FlxG.camera.follow(player);
+			group.add(player);
 
 			case "entrance", "exit":
-				// get object properties from map json by object name
-				var trigger = new Trigger(x, y, w, h,o.name,o.type);
-				var objProps = Reflect.field(mapJson,o.name);
-				var mapState = new MapState();
+			// get object properties from map json by object name
+			var trigger = new Trigger(x, y, w, h,o.name,o.type);
+			var objProps = Reflect.field(mapJson,o.name);
+			var mapState = new MapState();
         		mapState.file = objProps.map;
-				trigger.setState(mapState);
-				trigger.alpha = .3;
-				triggersLayer.add(trigger);
+			trigger.setState(mapState);
+			trigger.alpha = .3;
+			triggersLayer.add(trigger);
 			
 			case "object":
-				var objectLayerTileSet:TiledTileSet = this.getTileSet(g.properties.get("tileset"));
-				var tileImagesSource:TiledImageTile = objectLayerTileSet.getImageSourceByGid(o.gid);
-				var objectImage = new FlxSprite().loadGraphic(c_PATH_LEVEL_TILESHEETS + objectLayerTileSet.imageSource,true,objectLayerTileSet.tileHeight,objectLayerTileSet.tileWidth);
-				var bitmap:BitmapData = new BitmapData(objectLayerTileSet.tileHeight,objectLayerTileSet.tileWidth);
-				objectImage.frames.getByIndex(o.gid - 1).paint(bitmap);
-				var object = new Object(x, y, o.name,o.type ,bitmap);
-				group.add(object);
-				objectImage.destroy();
-				// get object properties from map json by object name
-				var trigger = new Trigger(x-1, y-1, w + 2, h + 2,o.name,o.type);
-				//var objProps = Reflect.field(mapJson,o.name);
-				//var mapState = new MapState();
+			var objectLayerTileSet:TiledTileSet = this.getTileSet(g.properties.get("tileset"));
+			var tileImagesSource:TiledImageTile = objectLayerTileSet.getImageSourceByGid(o.gid);
+			var objectImage = new FlxSprite().loadGraphic(c_PATH_LEVEL_TILESHEETS + objectLayerTileSet.imageSource,true,objectLayerTileSet.tileHeight,objectLayerTileSet.tileWidth);
+			var bitmap:BitmapData = new BitmapData(objectLayerTileSet.tileHeight,objectLayerTileSet.tileWidth);
+			objectImage.frames.getByIndex(o.gid - 1).paint(bitmap);
+			var object = new Object(x, y, o.name,o.type ,bitmap);
+			group.add(object);
+			objectImage.destroy();
+			// get object properties from map json by object name
+			var trigger = new Trigger(x-1, y-1, w + 2, h + 2,o.name,o.type);
+			//var objProps = Reflect.field(mapJson,o.name);
+			//var mapState = new MapState();
         		//mapState.file = objProps.map;
-				//trigger.setState(mapState);
-				trigger.alpha = .3;
-				triggersLayer.add(trigger);
+			//trigger.setState(mapState);
+			trigger.alpha = .3;
+			triggersLayer.add(trigger);
 		}
 	}
 
@@ -232,7 +232,7 @@ class TiledLevel extends TiledMap
 		for (layer in layers)
 		{
 			if (layer.type != TiledLayerType.IMAGE)
-				continue;
+			continue;
 
 			var image:TiledImageLayer = cast layer;
 			var sprite = new FlxSprite(image.x, image.y, c_PATH_LEVEL_TILESHEETS + image.imagePath);
@@ -244,7 +244,7 @@ class TiledLevel extends TiledMap
 	{
 		// collide tile layers
 		if (collidableTileLayers == null)
-			return false;
+		return false;
 
 		for (map in collidableTileLayers)
 		{
@@ -264,9 +264,9 @@ class TiledLevel extends TiledMap
 		//	IMPORTANT: Always collide the map with objects, not the other way around. 
 		//	This prevents odd collision errors (collision separation code off by 1 px).
 		if (FlxG.overlap(objectsLayer, obj, notifyCallback, processCallback != null ? processCallback : FlxObject.separate))
-			{
-				return true;
-			}
+		{
+			return true;
+		}
 
 		return false;
 	}
@@ -280,22 +280,22 @@ class TiledLevel extends TiledMap
 			
 			if (object.getType() == "object") {
 				if (buttonPressed) {
-				trace(object.getName());
+				        trace(object.getName());
 				}
 				return true;
 			}
 
 			if (object.getType() == "entrance") {
 				if (buttonPressed) {
-				var trigger:Trigger = cast object;
-        		levelState.openSubState(trigger.getState());
+				        var trigger:Trigger = cast object;
+        		                levelState.openSubState(trigger.getState());
 				}
 				return true;
 			}
 
 			if (object.getType() == "exit") {
 				if (buttonPressed) {
-				levelState.close();
+				        levelState.close();
 				}
 				return true;
 			}
