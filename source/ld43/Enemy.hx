@@ -38,6 +38,8 @@ class Enemy extends FlxSprite {
 		_brain = new FSM(idle);
 		_idleTmr = 0;
 		playerPos = FlxPoint.get();
+        scale.set(5,5);
+        updateHitbox();
 	}
 
 	override public function draw():Void {

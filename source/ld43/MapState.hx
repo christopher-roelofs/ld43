@@ -32,7 +32,7 @@ class MapState extends FlxSubState
 		FlxG.mouse.visible = false;
 		#end
 
-		bgColor = 0xffaaaaaa;
+		bgColor = FlxColor.WHITE;
 		// Load the level's tilemap
 		//level = new TiledLevel("assets/tiled/level2.tmx", this);
 		level = new TiledLevel(file, this);

@@ -282,7 +282,7 @@ class TiledLevel extends TiledMap {
 	}
 
 	public function checkEnemyVision(e:Enemy):Void {
-		if (FlxMath.distanceBetween(e,player) < 100) {
+		if (FlxMath.distanceBetween(e,player) < 400) {
 			e.seesPlayer = true;
 			e.playerPos.copyFrom(player.getMidpoint());
 		} else
