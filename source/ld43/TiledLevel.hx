@@ -257,6 +257,12 @@ class TiledLevel extends TiledMap {
 		return false;
 	}
 
+		public function collidPlayerWithEnemies() {
+		if (FlxG.overlap(enemiesGroup, player)) {
+			player.takeDamage();
+		}
+	}
+
 	public function collideWithEnemies(obj, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool {
 		//	IMPORTANT: Always collide the map with objects, not the other way around.
 		//	This prevents odd collision errors (collision separation code off by 1 px).

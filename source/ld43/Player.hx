@@ -38,6 +38,12 @@ class Player extends FlxSprite {
 		fire: false
 	};
 
+	public function takeDamage(){
+		scale.set(.7,.7);
+		updateHitbox();
+		trace('damage taken');
+	};
+
 	public function new(X:Float = 0, Y:Float = 0, state:MapState) {
 		super(X, Y);
 		loadGraphic(AssetPaths.snowman__png, true, 156, 156);
