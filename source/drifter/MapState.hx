@@ -63,5 +63,9 @@ class MapState extends FlxSubState
 		level.collideWithLevel(level.player);
 		level.collideWithObjects(level.player);
 		level.collideWithTriggers(level.player);
+
+		// Collide with foreground tile layer
+		level.collideWithLevel(level.enemy);
+		level.collideWithObjects(level.enemy);
 	}	
 }

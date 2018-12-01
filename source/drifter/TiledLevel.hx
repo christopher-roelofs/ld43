@@ -39,6 +39,8 @@ class TiledLevel extends TiledMap
 	private var _a:Bool;
 
 	public var player:Player;
+	public var enemy:Enemy;
+
 	// Sprites of images layers
 	public var imagesLayer:FlxGroup;
 
@@ -196,6 +198,10 @@ class TiledLevel extends TiledMap
 				player = new Player(x,y);
 				FlxG.camera.follow(player);
 				group.add(player);
+			
+			case "enemy_spawn":
+				enemy = new Enemy(x,y);
+				group.add(enemy);
 
 			case "entrance", "exit":
 				// get object properties from map json by object name
