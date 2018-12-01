@@ -20,7 +20,7 @@ class Player extends FlxSprite
 	public function new(X:Float = 0, Y:Float = 0) 
 	{
 		super(X, Y);
-		loadGraphic(AssetPaths.player__png, true, 15, 20);
+		loadGraphic(AssetPaths.snowman__png, true, 156, 156);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
 		animation.add("d", [0, 1, 0, 2,0], 6, false);

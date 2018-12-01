@@ -24,7 +24,7 @@ class Enemy extends FlxSprite {
 
 	public function new(X:Float = 0, Y:Float = 0) {
 		super(X, Y);
-		loadGraphic("assets/images/enemy.png", true, 16, 16);
+		loadGraphic(AssetPaths.enemy__png, true, 16, 16);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
 		animation.add("d", [0, 1, 0, 2], 6, false);
