@@ -18,9 +18,9 @@ class MapState extends FlxSubState {
 	public var file:String;
 	public var projectiles:Array<Projectile>;
 
-	#if mobile
+	
 	public static var virtualPad:FlxVirtualPad;
-	#end
+	
 
 	override public function create():Void {
 		#if desktop
@@ -62,7 +62,7 @@ class MapState extends FlxSubState {
 		level.collideWithObjects(level.player);
 		//level.collideWithTriggers(level.player);
 
-		level.collidPlayerWithEnemies();
+		level.collidePlayerWithEnemies();
 
 		// Collide enemy with foreground tile layer
 		level.collideWithLevel(level.enemiesGroup);

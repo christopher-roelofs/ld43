@@ -39,9 +39,9 @@ class Player extends FlxSprite {
 	};
 
 	public function takeDamage(){
-		scale.set(.7,.7);
-		updateHitbox();
-		trace('damage taken');
+		// scale.set(.7,.7);
+		// updateHitbox();
+		//trace('damage taken');
 	};
 
 	public function new(X:Float = 0, Y:Float = 0, state:MapState) {

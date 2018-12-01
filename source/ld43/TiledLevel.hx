@@ -46,6 +46,7 @@ class TiledLevel extends TiledMap {
 	// Sprites of images layers
 	public var imagesLayer:FlxGroup;
 	public var enemiesGroup:FlxGroup;
+	public var snowpileGroup:FlxGroup;
 
 	private var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
@@ -257,7 +258,7 @@ class TiledLevel extends TiledMap {
 		return false;
 	}
 
-		public function collidPlayerWithEnemies() {
+	public function collidePlayerWithEnemies() {
 		if (FlxG.overlap(enemiesGroup, player)) {
 			player.takeDamage();
 		}
