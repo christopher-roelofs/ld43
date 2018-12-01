@@ -14,6 +14,7 @@ import flixel.addons.editors.tiled.TiledTileLayer;
 import flixel.addons.editors.tiled.TiledTileSet;
 import flixel.group.FlxGroup;
 import flixel.tile.FlxTilemap;
+import flixel.math.FlxPoint;
 import haxe.io.Path;
 import haxe.Json;
 import openfl.Assets;
@@ -35,6 +36,7 @@ class TiledLevel extends TiledMap {
 	public var backgroundLayer:FlxGroup;
 
 	private var collidableTileLayers:Array<FlxTilemap>;
+	private var enemySpawns:Array<FlxPoint>;
 	private var mapJson:Json;
 	private var levelState:MapState;
 	private var _a:Bool;
@@ -44,6 +46,7 @@ class TiledLevel extends TiledMap {
 	// Sprites of images layers
 	public var imagesLayer:FlxGroup;
 	public var enemiesGroup:FlxGroup;
+
 	private var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
 	public function new(tiledLevel:Dynamic, state:MapState) {
@@ -61,6 +64,7 @@ class TiledLevel extends TiledMap {
 
 		loadImages();
 		loadObjects(state);
+		loadEnemies(objectsLayer);
 
 		// Load Tile Maps
 		for (layer in layers) {
@@ -71,8 +75,8 @@ class TiledLevel extends TiledMap {
 			var tileSheetName:String = tileLayer.properties.get("tileset");
 
 			if (tileSheetName == null)
-			throw "'tileset' property not defined for the '" + tileLayer.name + "' layer. Please add the property to the layer.";
-			
+				throw "'tileset' property not defined for the '" + tileLayer.name + "' layer. Please add the property to the layer.";
+
 			var tileSet:TiledTileSet = null;
 			for (ts in tilesets) {
 				if (ts.name == tileSheetName) {
@@ -82,7 +86,7 @@ class TiledLevel extends TiledMap {
 			}
 
 			if (tileSet == null)
-			throw "Tileset '" + tileSheetName + " not found. Did you misspell the 'tilesheet' property in " + tileLayer.name + "' layer?";
+				throw "Tileset '" + tileSheetName + " not found. Did you misspell the 'tilesheet' property in " + tileLayer.name + "' layer?";
 
 			var imagePath = new Path(tileSet.imageSource);
 			var processedPath = c_PATH_LEVEL_TILESHEETS + imagePath.file + "." + imagePath.ext;
@@ -102,12 +106,20 @@ class TiledLevel extends TiledMap {
 		}
 	}
 
+	public function loadEnemies(objectsLayer) {
+		enemiesGroup = new FlxGroup();
+		for (spawnPoint in enemySpawns) {
+			enemy = new Enemy(spawnPoint.x, spawnPoint.y);
+			// enemiesGroup.add(enemy);
+		}
+	};
+
 	public function loadObjects(state:MapState) {
 		var layer:TiledObjectLayer;
 
 		for (layer in layers) {
 			if (layer.type != TiledLayerType.OBJECT)
-			continue;
+				continue;
 			var objectLayer:TiledObjectLayer = cast layer;
 
 			// collection of images layer
@@ -168,13 +180,15 @@ class TiledLevel extends TiledMap {
 
 		switch (o.type.toLowerCase()) {
 			case "player_start":
-			player = new Player(x,y,levelState);
-			FlxG.camera.follow(player);
-			group.add(player);
+				player = new Player(x, y, levelState);
+				FlxG.camera.follow(player);
+				group.add(player);
 
 			case "enemy_spawn":
-				enemy = new Enemy(x, y);
-				group.add(enemy);
+				var position = new FlxPoint(x, y);
+				if (enemySpawns == null)
+					enemySpawns = new Array<FlxPoint>();
+				enemySpawns.push(position);
 
 			case "entrance", "exit":
 				// get object properties from map json by object name
@@ -210,7 +224,7 @@ class TiledLevel extends TiledMap {
 	public function loadImages() {
 		for (layer in layers) {
 			if (layer.type != TiledLayerType.IMAGE)
-			continue;
+				continue;
 
 			var image:TiledImageLayer = cast layer;
 			var sprite = new FlxSprite(image.x, image.y, c_PATH_LEVEL_TILESHEETS + image.imagePath);
@@ -221,7 +235,7 @@ class TiledLevel extends TiledMap {
 	public function collideWithLevel(obj, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool {
 		// collide tile layers
 		if (collidableTileLayers == null)
-		return false;
+			return false;
 
 		for (map in collidableTileLayers) {
 			// IMPORTANT: Always collide the map with objects, not the other way around.
@@ -234,10 +248,19 @@ class TiledLevel extends TiledMap {
 	}
 
 	public function collideWithObjects(obj, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool {
-		//	collide triggers layer
 		//	IMPORTANT: Always collide the map with objects, not the other way around.
 		//	This prevents odd collision errors (collision separation code off by 1 px).
 		if (FlxG.overlap(objectsLayer, obj, notifyCallback, processCallback != null ? processCallback : FlxObject.separate)) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public function collideWithEnemies(obj, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool {
+		//	IMPORTANT: Always collide the map with objects, not the other way around.
+		//	This prevents odd collision errors (collision separation code off by 1 px).
+		if (FlxG.overlap(enemiesGroup, obj, notifyCallback, processCallback != null ? processCallback : FlxObject.separate)) {
 			return true;
 		}
 
@@ -282,7 +305,7 @@ class TiledLevel extends TiledMap {
 	}
 
 	public function checkEnemyVision(e:Enemy):Void {
-		if (FlxMath.distanceBetween(e,player) < 400) {
+		if (FlxMath.distanceBetween(e, player) < 400) {
 			e.seesPlayer = true;
 			e.playerPos.copyFrom(player.getMidpoint());
 		} else

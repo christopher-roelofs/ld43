@@ -92,7 +92,7 @@ class Enemy extends FlxSprite {
 		if (!seesPlayer) {
 			_brain.activeState = idle;
 		} else {
-			FlxVelocity.moveTowardsPoint(this, playerPos, Std.int(speed));
+			FlxVelocity.moveTowardsPoint(this, playerPos, Std.int(speed*1.5));
 		}
 	}
 
