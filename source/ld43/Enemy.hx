@@ -24,21 +24,17 @@ class Enemy extends FlxSprite {
 
 	public function new(X:Float = 0, Y:Float = 0) {
 		super(X, Y);
-		loadGraphic(AssetPaths.enemy__png, true, 16, 16);
+		loadGraphic(AssetPaths.squirel__png, true, 39, 39);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
-		animation.add("d", [0, 1, 0, 2], 6, false);
-		animation.add("lr", [3, 4, 3, 5], 6, false);
-		animation.add("u", [6, 7, 6, 8], 6, false);
+		animation.add("d", [0, 1, 0, 1], 6, false);
+		animation.add("lr", [2, 3, 2, 3], 6, false);
+		animation.add("u", [4, 5, 5, 5], 6, false);
 		drag.x = drag.y = 10;
-		width = 8;
-		height = 14;
-		offset.x = 4;
-		offset.y = 2;
 		_brain = new FSM(idle);
 		_idleTmr = 0;
 		playerPos = FlxPoint.get();
-        scale.set(5,5);
+        scale.set(2,2);
         updateHitbox();
 	}
 

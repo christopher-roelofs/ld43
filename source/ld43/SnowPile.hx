@@ -10,7 +10,7 @@ class SnowPile extends FlxSprite
 	{
 
 		super(X, Y);
-        loadGraphic(AssetPaths.snowpile__png, true, 16, 16);
+        loadGraphic(AssetPaths.snowpile__png, true, 117,117);
 	}
 	
 }

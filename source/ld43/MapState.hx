@@ -38,6 +38,8 @@ class MapState extends FlxSubState {
 		// Add static images
 		add(level.imagesLayer);
 
+		add(level.snowpileGroup);
+
 		// Add foreground tiles after adding level objects, so these tiles render on top of player
 		add(level.foregroundTiles);
 
@@ -48,6 +50,7 @@ class MapState extends FlxSubState {
 		add(level.triggersLayer);
 
 		add(level.enemiesGroup);
+
 
 		destroySubStates = false;
 
