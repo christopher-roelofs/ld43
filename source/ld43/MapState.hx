@@ -69,12 +69,18 @@ class MapState extends FlxSubState
 
                 var i = projectiles.length;
                 while (i-- > 0) {
-                        var projectile = projectiles[i-1];
+                        var projectile = projectiles[i];
                         projectile.update(elapsed);
                         if (projectile.isFinished()) {
-                                projectile.kill();
                                 projectiles.splice(i, 1);
+                                projectile.kill();
                         }
                 }
-        }	
+        }
+
+        public function addProjectile(projectile:Projectile):Void {
+                projectiles.push(projectile);
+                add(projectile);
+        }
+        
 }

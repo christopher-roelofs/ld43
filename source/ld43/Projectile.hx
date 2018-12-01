@@ -22,21 +22,24 @@ class Projectile extends FlxSprite
 
         private var nextAnimation:String;
         
-        public function new(X:Float = 0, Y:Float = 0, Name:String, Type:String , ?SimpleGraphic) 
+        public function new(X:Float = 0, Y:Float = 0, playerFacing:Int) 
 	{
 
+                trace("Creating projectile");
                 super(X, Y);
-                
-                loadGraphic(AssetPaths.snowball__png, true, 129, 178);
+
+                trace("Loading graphic");
+                loadGraphic(AssetPaths.snowball__png, true, 150, 150);
                 setFacingFlip(FlxObject.LEFT, true, false);
 		setFacingFlip(FlxObject.RIGHT, false, false);
 
                 //animation.add("launch",[0,1,2,3],5,true);
-                //animation.add("flying",[0,1,2,3],5,true);
+                animation.add("flying",[0],5,true);
                 //animation.add("groundImpact",[4,5,6,7,8,9],12,true);
                 //animation.add("targetImpact",[10],1,true);                
 
                 //load audio
+                trace("Loading audio");
                 flyingSound = FlxG.sound.load(AssetPaths.snowball_flying__ogg,.1);
 
                 launchSound = FlxG.sound.load(AssetPaths.snowball_launch__ogg,.1);
@@ -48,9 +51,33 @@ class Projectile extends FlxSprite
                 targetImpactSound = FlxG.sound.load(AssetPaths.snowball_target__ogg,.1);
                 targetImpactSound.looped = false;
 
+                trace("Setting velocity from player facing");
+                setVelocityFromPlayerFacing(playerFacing);
+
+                this.drag.x = this.drag.y = 500;
+                
                 collided = false;
+                
 	}
 
+        public function setVelocityFromPlayerFacing(playerFacing:Int) {
+                var speed=600;
+                switch(playerFacing) {
+                        case FlxObject.UP:
+                        velocity.set(0,-speed);
+                        return;
+                        case FlxObject.DOWN:
+                        velocity.set(0,speed);
+                        return;
+                        case FlxObject.LEFT:
+                        velocity.set(-speed,0);
+                        return;
+                        case FlxObject.RIGHT:
+                        velocity.set(speed,0);
+                        return;
+                }
+        }
+        
         public function doLaunch() {
                 //animation.play("flying");
                 
