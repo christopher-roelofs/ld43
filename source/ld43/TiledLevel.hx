@@ -257,7 +257,7 @@ class TiledLevel extends TiledMap {
 		return false;
 	}
 
-		public function collidPlayerWithEnemies() {
+		public function collidePlayerWithEnemies() {
 		if (FlxG.overlap(enemiesGroup, player)) {
 			player.takeDamage();
 		}
