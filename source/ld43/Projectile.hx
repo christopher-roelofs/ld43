@@ -109,6 +109,10 @@ class Projectile extends FlxSprite
                 super.update(elapsed);
         }
 
+        public function handleEnemyCollision(enemy:Enemy):Void {
+                doTargetImpact();
+        }
+        
         public function isFinished() {
                 return collided && animation.finished;
         }

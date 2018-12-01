@@ -22,8 +22,8 @@ import flixel.input.gamepad.FlxGamepad;
 import flash.display.BitmapData;
 
 /**
- * @author Samuel Batista
- */
+* @author Samuel Batista
+*/
 class TiledLevel extends TiledMap {
 	// For each "Tile Layer" in the map, you must define a "tileset" property which contains the name of a tile sheet image
 	// used to draw tiles in that layer (without file extension). The image file must be located in the directory specified bellow.
@@ -69,13 +69,13 @@ class TiledLevel extends TiledMap {
 		// Load Tile Maps
 		for (layer in layers) {
 			if (layer.type != TiledLayerType.TILE)
-				continue;
+			continue;
 			var tileLayer:TiledTileLayer = cast layer;
 
 			var tileSheetName:String = tileLayer.properties.get("tileset");
 
 			if (tileSheetName == null)
-				throw "'tileset' property not defined for the '" + tileLayer.name + "' layer. Please add the property to the layer.";
+			throw "'tileset' property not defined for the '" + tileLayer.name + "' layer. Please add the property to the layer.";
 
 			var tileSet:TiledTileSet = null;
 			for (ts in tilesets) {
@@ -86,7 +86,7 @@ class TiledLevel extends TiledMap {
 			}
 
 			if (tileSet == null)
-				throw "Tileset '" + tileSheetName + " not found. Did you misspell the 'tilesheet' property in " + tileLayer.name + "' layer?";
+			throw "Tileset '" + tileSheetName + " not found. Did you misspell the 'tilesheet' property in " + tileLayer.name + "' layer?";
 
 			var imagePath = new Path(tileSet.imageSource);
 			var processedPath = c_PATH_LEVEL_TILESHEETS + imagePath.file + "." + imagePath.ext;
@@ -98,7 +98,7 @@ class TiledLevel extends TiledMap {
 				backgroundLayer.add(tilemap);
 			} else {
 				if (collidableTileLayers == null)
-					collidableTileLayers = new Array<FlxTilemap>();
+				collidableTileLayers = new Array<FlxTilemap>();
 
 				foregroundTiles.add(tilemap);
 				collidableTileLayers.push(tilemap);
@@ -119,7 +119,7 @@ class TiledLevel extends TiledMap {
 
 		for (layer in layers) {
 			if (layer.type != TiledLayerType.OBJECT)
-				continue;
+			continue;
 			var objectLayer:TiledObjectLayer = cast layer;
 
 			// collection of images layer
@@ -176,55 +176,55 @@ class TiledLevel extends TiledMap {
 
 		// objects in tiled are aligned bottom-left (top-left in flixel)
 		if (o.gid != -1)
-			y -= g.map.getGidOwner(o.gid).tileHeight;
+		y -= g.map.getGidOwner(o.gid).tileHeight;
 
 		switch (o.type.toLowerCase()) {
 			case "player_start":
-				player = new Player(x, y, levelState);
-				FlxG.camera.follow(player);
-				group.add(player);
+			player = new Player(x, y, levelState);
+			FlxG.camera.follow(player);
+			group.add(player);
 
 			case "enemy_spawn":
-				var position = new FlxPoint(x, y);
-				if (enemySpawns == null)
-					enemySpawns = new Array<FlxPoint>();
-				enemySpawns.push(position);
+			var position = new FlxPoint(x, y);
+			if (enemySpawns == null)
+			enemySpawns = new Array<FlxPoint>();
+			enemySpawns.push(position);
 
 			case "entrance", "exit":
-				// get object properties from map json by object name
-				var trigger = new Trigger(x, y, w, h, o.name, o.type);
-				var objProps = Reflect.field(mapJson, o.name);
-				var mapState = new MapState();
-				mapState.file = objProps.map;
-				trigger.setState(mapState);
-				trigger.alpha = .3;
-				triggersLayer.add(trigger);
+			// get object properties from map json by object name
+			var trigger = new Trigger(x, y, w, h, o.name, o.type);
+			var objProps = Reflect.field(mapJson, o.name);
+			var mapState = new MapState();
+			mapState.file = objProps.map;
+			trigger.setState(mapState);
+			trigger.alpha = .3;
+			triggersLayer.add(trigger);
 
 			case "object":
-				var objectLayerTileSet:TiledTileSet = this.getTileSet(g.properties.get("tileset"));
-				var tileImagesSource:TiledImageTile = objectLayerTileSet.getImageSourceByGid(o.gid);
-				var objectImage = new FlxSprite().loadGraphic(c_PATH_LEVEL_TILESHEETS + objectLayerTileSet.imageSource, true, objectLayerTileSet
-					.tileHeight, objectLayerTileSet.tileWidth);
-				var bitmap:BitmapData = new BitmapData(objectLayerTileSet.tileHeight, objectLayerTileSet.tileWidth);
-				objectImage.frames.getByIndex(o.gid - 1).paint(bitmap);
-				var object = new Object(x, y, o.name, o.type, bitmap);
-				group.add(object);
-				objectImage.destroy();
-				// get object properties from map json by object name
-				var trigger = new Trigger(x - 1, y - 1, w + 2, h + 2, o.name, o.type);
-				// var objProps = Reflect.field(mapJson,o.name);
-				// var mapState = new MapState();
-				// mapState.file = objProps.map;
-				// trigger.setState(mapState);
-				trigger.alpha = .3;
-				triggersLayer.add(trigger);
+			var objectLayerTileSet:TiledTileSet = this.getTileSet(g.properties.get("tileset"));
+			var tileImagesSource:TiledImageTile = objectLayerTileSet.getImageSourceByGid(o.gid);
+			var objectImage = new FlxSprite().loadGraphic(c_PATH_LEVEL_TILESHEETS + objectLayerTileSet.imageSource, true, objectLayerTileSet
+				.tileHeight, objectLayerTileSet.tileWidth);
+			var bitmap:BitmapData = new BitmapData(objectLayerTileSet.tileHeight, objectLayerTileSet.tileWidth);
+			objectImage.frames.getByIndex(o.gid - 1).paint(bitmap);
+			var object = new Object(x, y, o.name, o.type, bitmap);
+			group.add(object);
+			objectImage.destroy();
+			// get object properties from map json by object name
+			var trigger = new Trigger(x - 1, y - 1, w + 2, h + 2, o.name, o.type);
+			// var objProps = Reflect.field(mapJson,o.name);
+			// var mapState = new MapState();
+			// mapState.file = objProps.map;
+			// trigger.setState(mapState);
+			trigger.alpha = .3;
+			triggersLayer.add(trigger);
 		}
 	}
 
 	public function loadImages() {
 		for (layer in layers) {
 			if (layer.type != TiledLayerType.IMAGE)
-				continue;
+			continue;
 
 			var image:TiledImageLayer = cast layer;
 			var sprite = new FlxSprite(image.x, image.y, c_PATH_LEVEL_TILESHEETS + image.imagePath);
@@ -235,7 +235,7 @@ class TiledLevel extends TiledMap {
 	public function collideWithLevel(obj, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool {
 		// collide tile layers
 		if (collidableTileLayers == null)
-			return false;
+		return false;
 
 		for (map in collidableTileLayers) {
 			// IMPORTANT: Always collide the map with objects, not the other way around.
@@ -257,7 +257,7 @@ class TiledLevel extends TiledMap {
 		return false;
 	}
 
-		public function collidePlayerWithEnemies() {
+	public function collidePlayerWithEnemies() {
 		if (FlxG.overlap(enemiesGroup, player)) {
 			player.takeDamage();
 		}
@@ -315,6 +315,6 @@ class TiledLevel extends TiledMap {
 			e.seesPlayer = true;
 			e.playerPos.copyFrom(player.getMidpoint());
 		} else
-			e.seesPlayer = false;
+		e.seesPlayer = false;
 	}
 }

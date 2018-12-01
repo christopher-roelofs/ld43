@@ -16,7 +16,7 @@ import flixel.util.FlxColor;
 class MapState extends FlxSubState {
 	public var level:TiledLevel;
 	public var file:String;
-	public var projectiles:Array<Projectile>;
+	public var projectiles:FlxGroup;
 
 	#if mobile
 	public static var virtualPad:FlxVirtualPad;
@@ -51,7 +51,8 @@ class MapState extends FlxSubState {
 
 		destroySubStates = false;
 
-		projectiles = new Array<Projectile>();
+		projectiles = new FlxGroup();
+                add(projectiles);
 	}
 
 	override public function update(elapsed:Float):Void {
@@ -73,21 +74,27 @@ class MapState extends FlxSubState {
 			level.collideWithEnemies(enemy);
 		}
 
-                
-                var i = projectiles.length;
-                while (i-- > 0) {
-                        var projectile = projectiles[i];
+                for (sprite in projectiles) {
+                        var projectile:Projectile = cast sprite;
                         projectile.update(elapsed);
                         if (projectile.isFinished()) {
-                                projectiles.splice(i, 1);
                                 projectile.kill();
                         }
                 }
+                FlxG.overlap(projectiles, level.enemiesGroup, projectileEnemyCollision);
+
         }
 
-        public function addProjectile(projectile:Projectile):Void {
-                projectiles.push(projectile);
-                add(projectile);
+        public function projectileEnemyCollision(projectile:Projectile, enemy:Enemy) {
+                enemy.handleProjectileCollision(projectile);
+                projectile.handleEnemyCollision(enemy);
         }
+                
+        public function addProjectile(projectile:Projectile):Void {
+                projectiles.add(projectile);
+                
+        }
+
+        
         
 }
