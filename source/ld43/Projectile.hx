@@ -29,7 +29,7 @@ class Projectile extends FlxSprite
                 super(X, Y);
 
                 trace("Loading graphic");
-                loadGraphic(AssetPaths.snowball__png, true, 150, 150);
+                loadGraphic(AssetPaths.snowball__png, true, 35, 35);
                 setFacingFlip(FlxObject.LEFT, true, false);
 		setFacingFlip(FlxObject.RIGHT, false, false);
 
