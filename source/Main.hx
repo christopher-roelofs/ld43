@@ -1,5 +1,5 @@
 
-import drifter.StartState;
+import ld43.StartState;
 import flixel.FlxGame;
 import openfl.display.Sprite;
 

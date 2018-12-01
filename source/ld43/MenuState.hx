@@ -1,4 +1,4 @@
-package drifter;
+package ld43;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
