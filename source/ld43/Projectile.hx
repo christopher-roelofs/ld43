@@ -29,7 +29,7 @@ class Projectile extends FlxSprite
                 super(X, Y);
 
                 trace("Loading graphic");
-                loadGraphic(AssetPaths.snowball__png, true, 35, 35);
+                loadGraphic(AssetPaths.snowball__png, true, 20, 20);
                 setFacingFlip(FlxObject.LEFT, true, false);
 		setFacingFlip(FlxObject.RIGHT, false, false);
 
@@ -54,7 +54,7 @@ class Projectile extends FlxSprite
                 trace("Setting velocity from player facing");
                 setVelocityFromPlayerFacing(playerFacing);
 
-                this.drag.x = this.drag.y = 500;
+                this.drag.x = this.drag.y = 200;
                 
                 collided = false;
                 
@@ -62,6 +62,7 @@ class Projectile extends FlxSprite
 
         public function setVelocityFromPlayerFacing(playerFacing:Int) {
                 var speed=600;
+                angularVelocity=720;
                 switch(playerFacing) {
                         case FlxObject.UP:
                         velocity.set(0,-speed);
@@ -105,7 +106,9 @@ class Projectile extends FlxSprite
                         animation.play(nextAnimation);
                         nextAnimation = null;
                 }            
-
+                if (velocity.x < 1 && velocity.y < 1 && !collided) {
+                        doGroundImpact();
+                }
                 super.update(elapsed);
         }
 
@@ -113,7 +116,7 @@ class Projectile extends FlxSprite
                 doTargetImpact();
         }
         
-        public function isFinished() {
+        public function isFinished():Bool {
                 return collided && animation.finished;
         }
 }
