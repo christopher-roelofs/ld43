@@ -9,15 +9,20 @@ import flixel.input.gamepad.FlxGamepad;
 
 class Player extends FlxSprite
 {
-	public var speed:Float = 400;
+        var mapState:MapState;
+	public var speed:Float = 200;
 	private var _sndStep:FlxSound;
 
 	public var _up:Bool;
 	public var _down:Bool;
 	public var _left:Bool;
 	public var _right:Bool;
+        
+        public var walkSound:FlxSound;
+
+        public var currentState:String;
 	
-	public function new(X:Float = 0, Y:Float = 0) 
+	public function new(X:Float = 0, Y:Float = 0, state:MapState) 
 	{
 		super(X, Y);
 		loadGraphic(AssetPaths.snowman__png, true, 156, 156);
@@ -27,6 +32,8 @@ class Player extends FlxSprite
 		animation.add("lr", [3, 4, 3, 5,3], 6, false);
 		animation.add("u", [6, 7, 6, 8,6], 6, false);
 		drag.x = drag.y = 1600;
+                walkSound = FlxG.sound.load(AssetPaths.snowman_walk_snow__ogg,.1);
+                currentState="standing";
 	}
 	
 	private function movement():Void
@@ -51,30 +58,32 @@ class Player extends FlxSprite
 		#end
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
-        if (gamepad != null)
-        {
-        _up = gamepad.pressed.DPAD_UP;
-		_down = gamepad.pressed.DPAD_DOWN;
-		_down = gamepad.pressed.DPAD_DOWN;
-		_left = gamepad.pressed.DPAD_LEFT;
-		_right = gamepad.pressed.DPAD_RIGHT;
-        }
+                if (gamepad != null)
+                {
+                        _up = gamepad.pressed.DPAD_UP;
+		        _down = gamepad.pressed.DPAD_DOWN;
+		        _down = gamepad.pressed.DPAD_DOWN;
+		        _left = gamepad.pressed.DPAD_LEFT;
+		        _right = gamepad.pressed.DPAD_RIGHT;
+                }
 		
 		if (_up && _down)
-			_up = _down = false;
+		_up = _down = false;
 		if (_left && _right)
-			_left = _right = false;
-		
+		_left = _right = false;
+
+                
 		if ( _up || _down || _left || _right)
 		{
+                        updateAssetState("walking");
 			var mA:Float = 0;
 			if (_up)
 			{
 				mA = -90;
 				if (_left)
-					mA -= 45;
+				mA -= 45;
 				else if (_right)
-					mA += 45;
+				mA += 45;
 
 				facing = FlxObject.UP;
 			}
@@ -82,9 +91,9 @@ class Player extends FlxSprite
 			{
 				mA = 90;
 				if (_left)
-					mA += 45;
+				mA += 45;
 				else if (_right)
-					mA -= 45;
+				mA -= 45;
 
 				facing = FlxObject.DOWN;
 			}
@@ -102,34 +111,67 @@ class Player extends FlxSprite
 			velocity.set(speed, 0);
 			velocity.rotate(FlxPoint.weak(0, 0), mA);
 
+
+                        
 			if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)
 			{
-				//_sndStep.play();
 				
 				switch (facing)
 				{
 					case FlxObject.LEFT, FlxObject.RIGHT:
-						animation.play("lr");
-						
+					animation.play("lr");
+					
 					case FlxObject.UP:
-						animation.play("u");
-						
+					animation.play("u");
+					
 					case FlxObject.DOWN:
-						animation.play("d");
+					animation.play("d");
 				}
-			}
+                                
+			} else {
 
-			else if (animation.curAnim != null)
-		{
-			animation.curAnim.curFrame = 0;
-			animation.curAnim.pause();
-		}
-		}	
+                                if (animation.curAnim != null) {
+			                animation.curAnim.curFrame = 0;
+			                animation.curAnim.pause();
+                                }
+		        }
+		} else {
+                        updateAssetState("standing");                        
+                }
+                
 	}
 
+        public function playWalkSound() {
+                trace("Playing walk sound");
+                walkSound.play();
+        }
+
+        public function stopWalkSound() {
+                trace("Stopping walk sound");
+                walkSound.stop();
+        }
+        
+
+        public function updateAssetState(state:String) {
+                if(state == currentState) {
+                        return;
+                }
+                trace("state: '" + currentState + "' -> '" + state + "'");
+                currentState=state;
+                
+                switch(state) {
+                        case "walking":
+                        playWalkSound();
+                        animation.play(state);
+                        return;
+                        case "standing":
+                        stopWalkSound();
+                }
+        }
+        
 	override public function update(elapsed:Float):Void 
 	{
-		movement();
+		movement();                
 		super.update(elapsed);
 	}
 	

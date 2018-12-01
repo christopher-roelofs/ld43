@@ -1,0 +1,2460 @@
+digraph graphname {
+	node [shape=plaintext];
+n49779[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49779) BKNormal</td></tr>
+	<tr><td port="e0" align="left">image.dirty = true</td></tr>
+	<tr><td port="e1" align="left">image.version ++</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49778[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49778) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49777[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49777) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49776[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49776) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49775[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49775) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49774[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49774) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49773[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49773) BKNormal</td></tr>
+	<tr><td port="e0" align="left">sourcePosition = sourcePosition + 4</td></tr>
+	<tr><td port="e1" align="left">destPosition = destPosition + 4</td></tr>
+	<tr><td port="e2" align="left">alphaPosition = alphaPosition + 4</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49772[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49772) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49771[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49771) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast sourcePixel &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49770[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49770) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast sourcePixel &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49769[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49769) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast sourcePixel &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49768[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49768) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var destFormat = @:exhaustive destFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49767[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49767) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49766[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49766) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49765[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49765) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49764[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49764) BKSub</td></tr>
+	<tr><td port="e0" align="left">var r = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e1" align="left">var r = r &gt;&gt; 16</td></tr>
+	<tr><td port="e2" align="left">var g = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e3" align="left">var g = g &gt;&gt; 16</td></tr>
+	<tr><td port="e4" align="left">var b = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e5" align="left">var b = b &gt;&gt; 16</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = r &amp; 255</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = g &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = b &amp; 255</td></tr>
+	<tr><td port="e12" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e13" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e14" align="left">var sourcePixel = cast cast cast cast cast cast sourcePixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e15" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49763[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49763) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__alpha16</td></tr>
+	<tr><td port="e1" align="left">var tmp = cast this[cast cast cast cast cast cast sourcePixel &amp; cast 255]</td></tr>
+	<tr><td port="e2" align="left">lime.math._RGBA.RGBA_Impl_.a16 = tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49762[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49762) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49761[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49761) BKConditional</td></tr>
+	<tr><td port="e0" align="left">sourcePixel = 0</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49760[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49760) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) != 255</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49759[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49759) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = cast cast cast sourcePixel != 0</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49758[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49758) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) == 0</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49757[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49757) BKSub</td></tr>
+	<tr><td port="e0" align="left">var destPremultiplied = destPremultiplied</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destPremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49756[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49756) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49755[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49755) BKSub</td></tr>
+	<tr><td port="e0" align="left">var value = (cast cast cast cast alphaPixel &amp; cast 255) / 255</td></tr>
+	<tr><td port="e1" align="left">var value = (cast cast cast cast sourcePixel &amp; cast 255) * value</td></tr>
+	<tr><td port="e2" align="left">var value = Math.round(value)</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = value &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49754[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49754) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49753[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49753) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49752[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49752) BKSub</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49751[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49751) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49750[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49750) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var alphaPixel = alphaPosition + 2</td></tr>
+	<tr><td port="e1" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var alphaPixel = alphaPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var alphaPixel = alphaPosition + 1</td></tr>
+	<tr><td port="e4" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var alphaPixel = alphaPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e7" align="left">var alphaPixel = cast cast alphaData[alphaPosition] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var alphaPixel = alphaPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e10" align="left">var alphaPixel = alphaPosition + 3</td></tr>
+	<tr><td port="e11" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49749[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49749) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var alphaPixel = alphaPosition + 1</td></tr>
+	<tr><td port="e1" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var alphaPixel = alphaPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var alphaPixel = alphaPosition + 2</td></tr>
+	<tr><td port="e4" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var alphaPixel = alphaPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e7" align="left">var alphaPixel = alphaPosition + 3</td></tr>
+	<tr><td port="e8" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var alphaPixel = alphaPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e10" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e11" align="left">var alphaPixel = cast cast alphaData[alphaPosition] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49748[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49748) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var alphaPixel = cast cast alphaData[alphaPosition] &amp; 255</td></tr>
+	<tr><td port="e1" align="left">var alphaPixel = alphaPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e2" align="left">var alphaPixel = alphaPosition + 1</td></tr>
+	<tr><td port="e3" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e4" align="left">var alphaPixel = alphaPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e5" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e6" align="left">var alphaPixel = alphaPosition + 2</td></tr>
+	<tr><td port="e7" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var alphaPixel = alphaPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e10" align="left">var alphaPixel = alphaPosition + 3</td></tr>
+	<tr><td port="e11" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49747[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49747) BKSub</td></tr>
+	<tr><td port="e0" align="left">var alphaFormat = @:exhaustive alphaFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch alphaFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49746[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49746) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49745[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49745) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49744[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49744) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49743[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49743) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49742[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49742) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e2" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e3" align="left">var r = cast this[idx]</td></tr>
+	<tr><td port="e4" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e5" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var g = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e9" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e10" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e11" align="left">var b = cast this[idx]</td></tr>
+	<tr><td port="e12" align="left">var sourcePixel = r &amp; 255</td></tr>
+	<tr><td port="e13" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e14" align="left">var sourcePixel = g &amp; 255</td></tr>
+	<tr><td port="e15" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e16" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e17" align="left">var sourcePixel = b &amp; 255</td></tr>
+	<tr><td port="e18" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e19" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e20" align="left">var sourcePixel = cast cast cast cast cast cast sourcePixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e21" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49741[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49741) BKConditional</td></tr>
+	<tr><td port="e0" align="left">lime.math._RGBA.RGBA_Impl_.unmult = 255.0 / (cast cast cast cast cast cast sourcePixel &amp; cast 255)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49740[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49740) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49739[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49739) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49738[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49738) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) != 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49737[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49737) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) != 0</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49736[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49736) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var sourcePremultiplied = sourcePremultiplied</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch sourcePremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49735[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49735) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49734[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49734) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49733[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49733) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49732[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49732) BKSub</td></tr>
+	<tr><td port="e0" align="left">var sourceFormat = @:exhaustive sourceFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch sourceFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49731[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49731) BKNormal</td></tr>
+	<tr><td port="e0" align="left">`3 = `3 + 1</td></tr>
+	<tr><td port="e1" align="left">var x = `3 - 1</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49730[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49730) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49729[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49729) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`3 &lt; `2))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49728[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49728) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49727[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49727) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 49729</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49726[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49726) BKSub</td></tr>
+	<tr><td port="e0" align="left">var `3 = 0</td></tr>
+	<tr><td port="e1" align="left">var `2 = destView.width</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49725[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49725) BKNormal</td></tr>
+	<tr><td port="e0" align="left">`1 = `1 + 1</td></tr>
+	<tr><td port="e1" align="left">var y = `1 - 1</td></tr>
+	<tr><td port="e2" align="left">var sourceView = sourceView.byteOffset</td></tr>
+	<tr><td port="e3" align="left">var sourcePosition = sourceView.stride * y</td></tr>
+	<tr><td port="e4" align="left">sourcePosition = sourceView + sourcePosition</td></tr>
+	<tr><td port="e5" align="left">var destView = destView.byteOffset</td></tr>
+	<tr><td port="e6" align="left">var destPosition = destView.stride * y</td></tr>
+	<tr><td port="e7" align="left">destPosition = destView + destPosition</td></tr>
+	<tr><td port="e8" align="left">var alphaView = alphaView.byteOffset</td></tr>
+	<tr><td port="e9" align="left">var alphaPosition = alphaView.stride * y</td></tr>
+	<tr><td port="e10" align="left">alphaPosition = alphaView + alphaPosition</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49724[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49724) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49723[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49723) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`1 &lt; `))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49722[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49722) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49721[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49721) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 49723</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49720[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49720) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49719[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49719) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49718[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49718) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49717[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49717) BKNormal</td></tr>
+	<tr><td port="e0" align="left">sourcePosition = sourcePosition + 4</td></tr>
+	<tr><td port="e1" align="left">destPosition = destPosition + 4</td></tr>
+	<tr><td port="e2" align="left">alphaPosition = alphaPosition + 4</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49716[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49716) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49715[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49715) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49714[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49714) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast destPixel &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49713[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49713) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast destPixel &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49712[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49712) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast destPixel &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49711[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49711) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var destFormat = @:exhaustive destFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49710[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49710) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49709[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49709) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49708[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49708) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49707[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49707) BKSub</td></tr>
+	<tr><td port="e0" align="left">var r = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e1" align="left">var r = r &gt;&gt; 16</td></tr>
+	<tr><td port="e2" align="left">var g = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e3" align="left">var g = g &gt;&gt; 16</td></tr>
+	<tr><td port="e4" align="left">var b = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e5" align="left">var b = b &gt;&gt; 16</td></tr>
+	<tr><td port="e6" align="left">var destPixel = r &amp; 255</td></tr>
+	<tr><td port="e7" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e8" align="left">var destPixel = g &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e10" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e11" align="left">var destPixel = b &amp; 255</td></tr>
+	<tr><td port="e12" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e13" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e14" align="left">var destPixel = cast cast cast cast cast cast destPixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e15" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49706[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49706) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__alpha16</td></tr>
+	<tr><td port="e1" align="left">var tmp = cast this[cast cast cast cast cast cast destPixel &amp; cast 255]</td></tr>
+	<tr><td port="e2" align="left">lime.math._RGBA.RGBA_Impl_.a16 = tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49705[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49705) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49704[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49704) BKConditional</td></tr>
+	<tr><td port="e0" align="left">destPixel = 0</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49703[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49703) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = (cast cast cast cast cast cast destPixel &amp; cast 255) != 255</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49702[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49702) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = cast cast cast destPixel != 0</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49701[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49701) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = (cast cast cast cast cast cast destPixel &amp; cast 255) == 0</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49700[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49700) BKSub</td></tr>
+	<tr><td port="e0" align="left">var destPremultiplied = destPremultiplied</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destPremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49699[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49699) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49698[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49698) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = blendAlpha * 255.0</td></tr>
+	<tr><td port="e2" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e3" align="left">var value = cast this[idx]</td></tr>
+	<tr><td port="e4" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e6" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e7" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e8" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e9" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e10" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e11" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e12" align="left">var destPixel = value &amp; 255</td></tr>
+	<tr><td port="e13" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49697[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49697) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49696[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49696) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255) * sourceAlpha</td></tr>
+	<tr><td port="e2" align="left">var idx = (cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255) * destAlpha</td></tr>
+	<tr><td port="e3" align="left">var idx = idx * oneMinusSourceAlpha</td></tr>
+	<tr><td port="e4" align="left">var idx = idx + idx</td></tr>
+	<tr><td port="e5" align="left">var idx = idx / blendAlpha</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var value = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e10" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e11" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e12" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e13" align="left">var destPixel = value &amp; 255</td></tr>
+	<tr><td port="e14" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e15" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e16" align="left">var destPixel = cast cast cast cast cast destPixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e17" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49695[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49695) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49694[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49694) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255) * sourceAlpha</td></tr>
+	<tr><td port="e2" align="left">var idx = (cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255) * destAlpha</td></tr>
+	<tr><td port="e3" align="left">var idx = idx * oneMinusSourceAlpha</td></tr>
+	<tr><td port="e4" align="left">var idx = idx + idx</td></tr>
+	<tr><td port="e5" align="left">var idx = idx / blendAlpha</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var value = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e10" align="left">var destPixel = value &amp; 255</td></tr>
+	<tr><td port="e11" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e12" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e13" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e14" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e15" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e16" align="left">var destPixel = cast cast cast cast cast destPixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e17" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49693[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49693) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49692[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49692) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255) * sourceAlpha</td></tr>
+	<tr><td port="e2" align="left">var idx = (cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255) * destAlpha</td></tr>
+	<tr><td port="e3" align="left">var idx = idx * oneMinusSourceAlpha</td></tr>
+	<tr><td port="e4" align="left">var idx = idx + idx</td></tr>
+	<tr><td port="e5" align="left">var idx = idx / blendAlpha</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var value = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var destPixel = value &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e10" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e11" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e12" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e13" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e14" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e15" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e16" align="left">var destPixel = cast cast cast cast cast destPixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e17" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49691[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49691) BKConditional</td></tr>
+	<tr><td port="e0" align="left">destAlpha = (cast cast cast cast destPixel &amp; cast 255) / 255.0</td></tr>
+	<tr><td port="e1" align="left">oneMinusSourceAlpha = 1 - sourceAlpha</td></tr>
+	<tr><td port="e2" align="left">var blendAlpha = destAlpha * oneMinusSourceAlpha</td></tr>
+	<tr><td port="e3" align="left">blendAlpha = sourceAlpha + blendAlpha</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49690[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49690) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var sourceAlpha = (cast cast cast cast alphaPixel &amp; cast 255) / 255.0</td></tr>
+	<tr><td port="e1" align="left">var sourceAlpha = (cast cast cast cast sourcePixel &amp; cast 255) / 255.0</td></tr>
+	<tr><td port="e2" align="left">sourceAlpha = sourceAlpha * sourceAlpha</td></tr>
+	<tr><td port="e3" align="left">var tmp = sourceAlpha &gt; 0</td></tr>
+	<tr><td port="e4" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49689[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49689) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49688[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49688) BKSub</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49687[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49687) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49686[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49686) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var alphaPixel = alphaPosition + 2</td></tr>
+	<tr><td port="e1" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var alphaPixel = alphaPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var alphaPixel = alphaPosition + 1</td></tr>
+	<tr><td port="e4" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var alphaPixel = alphaPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e7" align="left">var alphaPixel = cast cast alphaData[alphaPosition] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var alphaPixel = alphaPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e10" align="left">var alphaPixel = alphaPosition + 3</td></tr>
+	<tr><td port="e11" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49685[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49685) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var alphaPixel = alphaPosition + 1</td></tr>
+	<tr><td port="e1" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var alphaPixel = alphaPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var alphaPixel = alphaPosition + 2</td></tr>
+	<tr><td port="e4" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var alphaPixel = alphaPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e7" align="left">var alphaPixel = alphaPosition + 3</td></tr>
+	<tr><td port="e8" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var alphaPixel = alphaPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e10" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e11" align="left">var alphaPixel = cast cast alphaData[alphaPosition] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49684[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49684) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var alphaPixel = cast cast alphaData[alphaPosition] &amp; 255</td></tr>
+	<tr><td port="e1" align="left">var alphaPixel = alphaPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e2" align="left">var alphaPixel = alphaPosition + 1</td></tr>
+	<tr><td port="e3" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e4" align="left">var alphaPixel = alphaPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e5" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e6" align="left">var alphaPixel = alphaPosition + 2</td></tr>
+	<tr><td port="e7" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var alphaPixel = alphaPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="e10" align="left">var alphaPixel = alphaPosition + 3</td></tr>
+	<tr><td port="e11" align="left">var alphaPixel = cast cast alphaData[alphaPixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">alphaPixel = alphaPixel | alphaPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49683[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49683) BKSub</td></tr>
+	<tr><td port="e0" align="left">var alphaFormat = @:exhaustive alphaFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch alphaFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49682[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49682) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49681[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49681) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49680[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49680) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49679[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49679) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49678[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49678) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e2" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e3" align="left">var r = cast this[idx]</td></tr>
+	<tr><td port="e4" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e5" align="left">var idx = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var g = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e9" align="left">var idx = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e10" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e11" align="left">var b = cast this[idx]</td></tr>
+	<tr><td port="e12" align="left">var destPixel = r &amp; 255</td></tr>
+	<tr><td port="e13" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e14" align="left">var destPixel = g &amp; 255</td></tr>
+	<tr><td port="e15" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e16" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e17" align="left">var destPixel = b &amp; 255</td></tr>
+	<tr><td port="e18" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e19" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e20" align="left">var destPixel = cast cast cast cast cast cast destPixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e21" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49677[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49677) BKConditional</td></tr>
+	<tr><td port="e0" align="left">lime.math._RGBA.RGBA_Impl_.unmult = 255.0 / (cast cast cast cast cast cast destPixel &amp; cast 255)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49676[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49676) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49675[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49675) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49674[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49674) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = (cast cast cast cast cast cast destPixel &amp; cast 255) != 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49673[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49673) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp = (cast cast cast cast cast cast destPixel &amp; cast 255) != 0</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49672[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49672) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var destPremultiplied = destPremultiplied</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destPremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49671[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49671) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var destPixel = destPosition + 2</td></tr>
+	<tr><td port="e1" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var destPixel = destPosition + 1</td></tr>
+	<tr><td port="e4" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e7" align="left">var destPixel = cast cast destData[destPosition] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e10" align="left">var destPixel = destPosition + 3</td></tr>
+	<tr><td port="e11" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49670[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49670) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var destPixel = destPosition + 1</td></tr>
+	<tr><td port="e1" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var destPixel = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e7" align="left">var destPixel = destPosition + 3</td></tr>
+	<tr><td port="e8" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e10" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e11" align="left">var destPixel = cast cast destData[destPosition] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49669[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49669) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var destPixel = cast cast destData[destPosition] &amp; 255</td></tr>
+	<tr><td port="e1" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e2" align="left">var destPixel = destPosition + 1</td></tr>
+	<tr><td port="e3" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e4" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e5" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e6" align="left">var destPixel = destPosition + 2</td></tr>
+	<tr><td port="e7" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e10" align="left">var destPixel = destPosition + 3</td></tr>
+	<tr><td port="e11" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49668[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49668) BKSub</td></tr>
+	<tr><td port="e0" align="left">var destFormat = @:exhaustive destFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49667[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49667) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49666[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49666) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49665[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49665) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49664[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49664) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49663[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49663) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e2" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e3" align="left">var r = cast this[idx]</td></tr>
+	<tr><td port="e4" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e5" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var g = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e9" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e10" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e11" align="left">var b = cast this[idx]</td></tr>
+	<tr><td port="e12" align="left">var sourcePixel = r &amp; 255</td></tr>
+	<tr><td port="e13" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e14" align="left">var sourcePixel = g &amp; 255</td></tr>
+	<tr><td port="e15" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e16" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e17" align="left">var sourcePixel = b &amp; 255</td></tr>
+	<tr><td port="e18" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e19" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e20" align="left">var sourcePixel = cast cast cast cast cast cast sourcePixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e21" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49662[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49662) BKConditional</td></tr>
+	<tr><td port="e0" align="left">lime.math._RGBA.RGBA_Impl_.unmult = 255.0 / (cast cast cast cast cast cast sourcePixel &amp; cast 255)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49661[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49661) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49660[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49660) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49659[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49659) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) != 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49658[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49658) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) != 0</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49657[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49657) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var sourcePremultiplied = sourcePremultiplied</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch sourcePremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49656[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49656) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49655[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49655) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49654[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49654) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49653[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49653) BKSub</td></tr>
+	<tr><td port="e0" align="left">var sourceFormat = @:exhaustive sourceFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch sourceFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49652[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49652) BKNormal</td></tr>
+	<tr><td port="e0" align="left">`3 = `3 + 1</td></tr>
+	<tr><td port="e1" align="left">var x = `3 - 1</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49651[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49651) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49650[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49650) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`3 &lt; `2))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49649[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49649) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49648[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49648) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 49650</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49647[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49647) BKSub</td></tr>
+	<tr><td port="e0" align="left">var `3 = 0</td></tr>
+	<tr><td port="e1" align="left">var `2 = destView.width</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49646[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49646) BKNormal</td></tr>
+	<tr><td port="e0" align="left">`1 = `1 + 1</td></tr>
+	<tr><td port="e1" align="left">var y = `1 - 1</td></tr>
+	<tr><td port="e2" align="left">var sourceView = sourceView.byteOffset</td></tr>
+	<tr><td port="e3" align="left">var sourcePosition = sourceView.stride * y</td></tr>
+	<tr><td port="e4" align="left">sourcePosition = sourceView + sourcePosition</td></tr>
+	<tr><td port="e5" align="left">var destView = destView.byteOffset</td></tr>
+	<tr><td port="e6" align="left">var destPosition = destView.stride * y</td></tr>
+	<tr><td port="e7" align="left">destPosition = destView + destPosition</td></tr>
+	<tr><td port="e8" align="left">var alphaView = alphaView.byteOffset</td></tr>
+	<tr><td port="e9" align="left">var alphaPosition = alphaView.stride * y</td></tr>
+	<tr><td port="e10" align="left">alphaPosition = alphaView + alphaPosition</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49645[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49645) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49644[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49644) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`1 &lt; `))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49643[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49643) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49642[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49642) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 49644</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49641[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49641) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var `1 = 0</td></tr>
+	<tr><td port="e1" align="left">var ` = destView.height</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49640[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49640) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var `1 = 0</td></tr>
+	<tr><td port="e1" align="left">var ` = destView.height</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49639[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49639) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var alphaData = alphaImage.buffer.data</td></tr>
+	<tr><td port="e1" align="left">var alphaFormat = alphaImage.buffer.format</td></tr>
+	<tr><td port="e2" align="left">var alphaPosition</td></tr>
+	<tr><td port="e3" align="left">var alphaPixel</td></tr>
+	<tr><td port="e4" align="left">var alphaView = new lime._internal.graphics._ImageDataUtil.ImageDataView(alphaImage, new lime.math.Rectangle(alphaPoint.x, alphaPoint.y, alphaImage.width, alphaImage.height))</td></tr>
+	<tr><td port="e5" align="left">alphaView.offset(sourceView.x, sourceView.y)</td></tr>
+	<tr><td port="e6" align="left">var x = destPoint.x</td></tr>
+	<tr><td port="e7" align="left">var tmp = cast x | 0</td></tr>
+	<tr><td port="e8" align="left">var x = destPoint.y</td></tr>
+	<tr><td port="e9" align="left">var tmp = cast x | 0</td></tr>
+	<tr><td port="e10" align="left">destView.clip(tmp, tmp, alphaView.width, alphaView.height)</td></tr>
+	<tr><td port="e11" align="left">var blend = blend</td></tr>
+	<tr><td port="e12" align="left">@:cond-branch blend</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49638[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49638) BKConditional</td></tr>
+	<tr><td port="e0" align="left">alphaPoint = new lime.math.Vector2()</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49637[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49637) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49636[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49636) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49635[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49635) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49634[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49634) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49633[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49633) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49632[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49632) BKNormal</td></tr>
+	<tr><td port="e0" align="left">sourcePosition = sourcePosition + 4</td></tr>
+	<tr><td port="e1" align="left">destPosition = destPosition + 4</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49631[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49631) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49630[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49630) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast sourcePixel &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49629[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49629) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast sourcePixel &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49628[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49628) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast sourcePixel &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49627[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49627) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var destFormat = @:exhaustive destFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49626[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49626) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49625[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49625) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49624[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49624) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49623[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49623) BKSub</td></tr>
+	<tr><td port="e0" align="left">var r = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e1" align="left">var r = r &gt;&gt; 16</td></tr>
+	<tr><td port="e2" align="left">var g = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e3" align="left">var g = g &gt;&gt; 16</td></tr>
+	<tr><td port="e4" align="left">var b = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e5" align="left">var b = b &gt;&gt; 16</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = r &amp; 255</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = g &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = b &amp; 255</td></tr>
+	<tr><td port="e12" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e13" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e14" align="left">var sourcePixel = cast cast cast cast cast cast sourcePixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e15" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49622[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49622) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__alpha16</td></tr>
+	<tr><td port="e1" align="left">var tmp = cast this[cast cast cast cast cast cast sourcePixel &amp; cast 255]</td></tr>
+	<tr><td port="e2" align="left">lime.math._RGBA.RGBA_Impl_.a16 = tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49621[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49621) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49620[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49620) BKConditional</td></tr>
+	<tr><td port="e0" align="left">sourcePixel = 0</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49619[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49619) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) != 255</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49618[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49618) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = cast cast cast sourcePixel != 0</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49617[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49617) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) == 0</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49616[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49616) BKSub</td></tr>
+	<tr><td port="e0" align="left">var destPremultiplied = destPremultiplied</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destPremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49615[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49615) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49614[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49614) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49613[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49613) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49612[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49612) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49611[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49611) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e2" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e3" align="left">var r = cast this[idx]</td></tr>
+	<tr><td port="e4" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e5" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var g = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e9" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e10" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e11" align="left">var b = cast this[idx]</td></tr>
+	<tr><td port="e12" align="left">var sourcePixel = r &amp; 255</td></tr>
+	<tr><td port="e13" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e14" align="left">var sourcePixel = g &amp; 255</td></tr>
+	<tr><td port="e15" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e16" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e17" align="left">var sourcePixel = b &amp; 255</td></tr>
+	<tr><td port="e18" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e19" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e20" align="left">var sourcePixel = cast cast cast cast cast cast sourcePixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e21" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49610[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49610) BKConditional</td></tr>
+	<tr><td port="e0" align="left">lime.math._RGBA.RGBA_Impl_.unmult = 255.0 / (cast cast cast cast cast cast sourcePixel &amp; cast 255)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49609[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49609) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49608[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49608) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49607[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49607) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) != 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49606[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49606) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) != 0</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49605[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49605) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var sourcePremultiplied = sourcePremultiplied</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch sourcePremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49604[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49604) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49603[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49603) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49602[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49602) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49601[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49601) BKSub</td></tr>
+	<tr><td port="e0" align="left">var sourceFormat = @:exhaustive sourceFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch sourceFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49600[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49600) BKNormal</td></tr>
+	<tr><td port="e0" align="left">`3 = `3 + 1</td></tr>
+	<tr><td port="e1" align="left">var x = `3 - 1</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49599[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49599) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49598[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49598) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`3 &lt; `2))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49597[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49597) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49596[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49596) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 49598</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49595[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49595) BKSub</td></tr>
+	<tr><td port="e0" align="left">var `3 = 0</td></tr>
+	<tr><td port="e1" align="left">var `2 = destView.width</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49594[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49594) BKNormal</td></tr>
+	<tr><td port="e0" align="left">`1 = `1 + 1</td></tr>
+	<tr><td port="e1" align="left">var y = `1 - 1</td></tr>
+	<tr><td port="e2" align="left">var sourceView = sourceView.byteOffset</td></tr>
+	<tr><td port="e3" align="left">var sourcePosition = sourceView.stride * y</td></tr>
+	<tr><td port="e4" align="left">sourcePosition = sourceView + sourcePosition</td></tr>
+	<tr><td port="e5" align="left">var destView = destView.byteOffset</td></tr>
+	<tr><td port="e6" align="left">var destPosition = destView.stride * y</td></tr>
+	<tr><td port="e7" align="left">destPosition = destView + destPosition</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49593[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49593) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49592[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49592) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`1 &lt; `))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49591[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49591) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49590[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49590) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 49592</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49589[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49589) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49588[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49588) BKNormal</td></tr>
+	<tr><td port="e0" align="left">`1 = `1 + 1</td></tr>
+	<tr><td port="e1" align="left">var y = `1 - 1</td></tr>
+	<tr><td port="e2" align="left">var sourceView = sourceView.byteOffset</td></tr>
+	<tr><td port="e3" align="left">var sourcePosition = sourceView.stride * y</td></tr>
+	<tr><td port="e4" align="left">sourcePosition = sourceView + sourcePosition</td></tr>
+	<tr><td port="e5" align="left">var destView = destView.byteOffset</td></tr>
+	<tr><td port="e6" align="left">var destPosition = destView.stride * y</td></tr>
+	<tr><td port="e7" align="left">destPosition = destView + destPosition</td></tr>
+	<tr><td port="e8" align="left">var tmp = destView.width * destBytesPerPixel</td></tr>
+	<tr><td port="e9" align="left">var tmp = sourcePosition + tmp</td></tr>
+	<tr><td port="e10" align="left">var tmp = sourceData.subarray(sourcePosition, tmp)</td></tr>
+	<tr><td port="e11" align="left">destData.set(tmp, destPosition)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49587[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49587) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49586[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49586) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`1 &lt; `))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49585[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49585) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49584[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49584) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 49586</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49583[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49583) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var `1 = 0</td></tr>
+	<tr><td port="e1" align="left">var ` = destView.height</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49582[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49582) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var `1 = 0</td></tr>
+	<tr><td port="e1" align="left">var ` = destView.height</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49581[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49581) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49580[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49580) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49579[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49579) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = sourceBytesPerPixel == destBytesPerPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49578[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49578) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49577[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49577) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49576[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49576) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = sourcePremultiplied == destPremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49575[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49575) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49574[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49574) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49573[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49573) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49572[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49572) BKNormal</td></tr>
+	<tr><td port="e0" align="left">sourcePosition = sourcePosition + 4</td></tr>
+	<tr><td port="e1" align="left">destPosition = destPosition + 4</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49571[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49571) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49570[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49570) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast destPixel &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49569[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49569) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast destPixel &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49568[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49568) BKConditional</td></tr>
+	<tr><td port="e0" align="left">cast destData[destPosition] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255</td></tr>
+	<tr><td port="e1" align="left">var tmp = destPosition + 1</td></tr>
+	<tr><td port="e2" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255</td></tr>
+	<tr><td port="e3" align="left">var tmp = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">cast destData[tmp] = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255</td></tr>
+	<tr><td port="e5" align="left">var tmp = destPosition + 3</td></tr>
+	<tr><td port="e6" align="left">cast destData[tmp] = cast cast cast cast cast destPixel &amp; cast 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49567[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49567) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var destFormat = @:exhaustive destFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49566[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49566) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49565[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49565) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49564[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49564) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49563[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49563) BKSub</td></tr>
+	<tr><td port="e0" align="left">var r = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e1" align="left">var r = r &gt;&gt; 16</td></tr>
+	<tr><td port="e2" align="left">var g = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e3" align="left">var g = g &gt;&gt; 16</td></tr>
+	<tr><td port="e4" align="left">var b = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.a16</td></tr>
+	<tr><td port="e5" align="left">var b = b &gt;&gt; 16</td></tr>
+	<tr><td port="e6" align="left">var destPixel = r &amp; 255</td></tr>
+	<tr><td port="e7" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e8" align="left">var destPixel = g &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e10" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e11" align="left">var destPixel = b &amp; 255</td></tr>
+	<tr><td port="e12" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e13" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e14" align="left">var destPixel = cast cast cast cast cast cast destPixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e15" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49562[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49562) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__alpha16</td></tr>
+	<tr><td port="e1" align="left">var tmp = cast this[cast cast cast cast cast cast destPixel &amp; cast 255]</td></tr>
+	<tr><td port="e2" align="left">lime.math._RGBA.RGBA_Impl_.a16 = tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49561[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49561) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49560[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49560) BKConditional</td></tr>
+	<tr><td port="e0" align="left">destPixel = 0</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49559[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49559) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = (cast cast cast cast cast cast destPixel &amp; cast 255) != 255</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49558[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49558) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = cast cast cast destPixel != 0</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49557[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49557) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = (cast cast cast cast cast cast destPixel &amp; cast 255) == 0</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49556[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49556) BKSub</td></tr>
+	<tr><td port="e0" align="left">var destPremultiplied = destPremultiplied</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destPremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49555[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49555) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49554[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49554) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49553[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49553) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = blendAlpha * 255.0</td></tr>
+	<tr><td port="e2" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e3" align="left">var value = cast this[idx]</td></tr>
+	<tr><td port="e4" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e6" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e7" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e8" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e9" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e10" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e11" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e12" align="left">var destPixel = value &amp; 255</td></tr>
+	<tr><td port="e13" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49552[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49552) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49551[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49551) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255) * sourceAlpha</td></tr>
+	<tr><td port="e2" align="left">var idx = (cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255) * destAlpha</td></tr>
+	<tr><td port="e3" align="left">var idx = idx * oneMinusSourceAlpha</td></tr>
+	<tr><td port="e4" align="left">var idx = idx + idx</td></tr>
+	<tr><td port="e5" align="left">var idx = idx / blendAlpha</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var value = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e10" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e11" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e12" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e13" align="left">var destPixel = value &amp; 255</td></tr>
+	<tr><td port="e14" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e15" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e16" align="left">var destPixel = cast cast cast cast cast destPixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e17" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49550[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49550) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49549[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49549) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255) * sourceAlpha</td></tr>
+	<tr><td port="e2" align="left">var idx = (cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255) * destAlpha</td></tr>
+	<tr><td port="e3" align="left">var idx = idx * oneMinusSourceAlpha</td></tr>
+	<tr><td port="e4" align="left">var idx = idx + idx</td></tr>
+	<tr><td port="e5" align="left">var idx = idx / blendAlpha</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var value = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e10" align="left">var destPixel = value &amp; 255</td></tr>
+	<tr><td port="e11" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e12" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e13" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e14" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e15" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e16" align="left">var destPixel = cast cast cast cast cast destPixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e17" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49548[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49548) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49547[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49547) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255) * sourceAlpha</td></tr>
+	<tr><td port="e2" align="left">var idx = (cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255) * destAlpha</td></tr>
+	<tr><td port="e3" align="left">var idx = idx * oneMinusSourceAlpha</td></tr>
+	<tr><td port="e4" align="left">var idx = idx + idx</td></tr>
+	<tr><td port="e5" align="left">var idx = idx / blendAlpha</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var value = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var destPixel = value &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e10" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e11" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e12" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e13" align="left">var destPixel = cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e14" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e15" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e16" align="left">var destPixel = cast cast cast cast cast destPixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e17" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49546[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49546) BKConditional</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49545[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49545) BKConditional</td></tr>
+	<tr><td port="e0" align="left">destPixel = 0</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49544[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49544) BKNormal</td></tr>
+	<tr><td port="e0" align="left">sourceAlpha = (cast cast cast cast sourcePixel &amp; cast 255) / 255.0</td></tr>
+	<tr><td port="e1" align="left">destAlpha = (cast cast cast cast destPixel &amp; cast 255) / 255.0</td></tr>
+	<tr><td port="e2" align="left">oneMinusSourceAlpha = 1 - sourceAlpha</td></tr>
+	<tr><td port="e3" align="left">var blendAlpha = destAlpha * oneMinusSourceAlpha</td></tr>
+	<tr><td port="e4" align="left">blendAlpha = sourceAlpha + blendAlpha</td></tr>
+	<tr><td port="e5" align="left">var tmp = blendAlpha == 0</td></tr>
+	<tr><td port="e6" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49543[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49543) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49542[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49542) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49541[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49541) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49540[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49540) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 24 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e2" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e3" align="left">var r = cast this[idx]</td></tr>
+	<tr><td port="e4" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e5" align="left">var idx = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 16 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var g = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e9" align="left">var idx = (cast cast cast cast cast cast cast cast destPixel &gt;&gt;&gt; 8 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e10" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e11" align="left">var b = cast this[idx]</td></tr>
+	<tr><td port="e12" align="left">var destPixel = r &amp; 255</td></tr>
+	<tr><td port="e13" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e14" align="left">var destPixel = g &amp; 255</td></tr>
+	<tr><td port="e15" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e16" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e17" align="left">var destPixel = b &amp; 255</td></tr>
+	<tr><td port="e18" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e19" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e20" align="left">var destPixel = cast cast cast cast cast cast destPixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e21" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49539[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49539) BKConditional</td></tr>
+	<tr><td port="e0" align="left">lime.math._RGBA.RGBA_Impl_.unmult = 255.0 / (cast cast cast cast cast cast destPixel &amp; cast 255)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49538[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49538) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49537[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49537) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49536[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49536) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = (cast cast cast cast cast cast destPixel &amp; cast 255) != 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49535[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49535) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp = (cast cast cast cast cast cast destPixel &amp; cast 255) != 0</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49534[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49534) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var destPremultiplied = destPremultiplied</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destPremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49533[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49533) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var destPixel = destPosition + 2</td></tr>
+	<tr><td port="e1" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var destPixel = destPosition + 1</td></tr>
+	<tr><td port="e4" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e7" align="left">var destPixel = cast cast destData[destPosition] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e10" align="left">var destPixel = destPosition + 3</td></tr>
+	<tr><td port="e11" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49532[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49532) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var destPixel = destPosition + 1</td></tr>
+	<tr><td port="e1" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var destPixel = destPosition + 2</td></tr>
+	<tr><td port="e4" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e7" align="left">var destPixel = destPosition + 3</td></tr>
+	<tr><td port="e8" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e10" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e11" align="left">var destPixel = cast cast destData[destPosition] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49531[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49531) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var destPixel = cast cast destData[destPosition] &amp; 255</td></tr>
+	<tr><td port="e1" align="left">var destPixel = destPixel &lt;&lt; 24</td></tr>
+	<tr><td port="e2" align="left">var destPixel = destPosition + 1</td></tr>
+	<tr><td port="e3" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e4" align="left">var destPixel = destPixel &lt;&lt; 16</td></tr>
+	<tr><td port="e5" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e6" align="left">var destPixel = destPosition + 2</td></tr>
+	<tr><td port="e7" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var destPixel = destPixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="e10" align="left">var destPixel = destPosition + 3</td></tr>
+	<tr><td port="e11" align="left">var destPixel = cast cast destData[destPixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">destPixel = destPixel | destPixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49530[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49530) BKSub</td></tr>
+	<tr><td port="e0" align="left">var destFormat = @:exhaustive destFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch destFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49529[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49529) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49528[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49528) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49527[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49527) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49526[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49526) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49525[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49525) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e1" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 24 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e2" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e3" align="left">var r = cast this[idx]</td></tr>
+	<tr><td port="e4" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e5" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 16 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e6" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e7" align="left">var g = cast this[idx]</td></tr>
+	<tr><td port="e8" align="left">var this = lime.math._RGBA.RGBA_Impl_.__clamp</td></tr>
+	<tr><td port="e9" align="left">var idx = (cast cast cast cast cast cast cast cast sourcePixel &gt;&gt;&gt; 8 &amp; cast 255) * lime.math._RGBA.RGBA_Impl_.unmult</td></tr>
+	<tr><td port="e10" align="left">var idx = Math.round(idx)</td></tr>
+	<tr><td port="e11" align="left">var b = cast this[idx]</td></tr>
+	<tr><td port="e12" align="left">var sourcePixel = r &amp; 255</td></tr>
+	<tr><td port="e13" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e14" align="left">var sourcePixel = g &amp; 255</td></tr>
+	<tr><td port="e15" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e16" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e17" align="left">var sourcePixel = b &amp; 255</td></tr>
+	<tr><td port="e18" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e19" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e20" align="left">var sourcePixel = cast cast cast cast cast cast sourcePixel &amp; cast 255 &amp; 255</td></tr>
+	<tr><td port="e21" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49524[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49524) BKConditional</td></tr>
+	<tr><td port="e0" align="left">lime.math._RGBA.RGBA_Impl_.unmult = 255.0 / (cast cast cast cast cast cast sourcePixel &amp; cast 255)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49523[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49523) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49522[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49522) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49521[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49521) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) != 255</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49520[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49520) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp = (cast cast cast cast cast cast sourcePixel &amp; cast 255) != 0</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49519[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49519) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var sourcePremultiplied = sourcePremultiplied</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch sourcePremultiplied</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49518[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49518) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49517[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49517) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49516[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49516) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePixel = cast cast sourceData[sourcePosition] &amp; 255</td></tr>
+	<tr><td port="e1" align="left">var sourcePixel = sourcePixel &lt;&lt; 24</td></tr>
+	<tr><td port="e2" align="left">var sourcePixel = sourcePosition + 1</td></tr>
+	<tr><td port="e3" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e4" align="left">var sourcePixel = sourcePixel &lt;&lt; 16</td></tr>
+	<tr><td port="e5" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e6" align="left">var sourcePixel = sourcePosition + 2</td></tr>
+	<tr><td port="e7" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e8" align="left">var sourcePixel = sourcePixel &lt;&lt; 8</td></tr>
+	<tr><td port="e9" align="left">var sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="e10" align="left">var sourcePixel = sourcePosition + 3</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel = cast cast sourceData[sourcePixel] &amp; 255</td></tr>
+	<tr><td port="e12" align="left">sourcePixel = sourcePixel | sourcePixel</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49515[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49515) BKSub</td></tr>
+	<tr><td port="e0" align="left">var sourceFormat = @:exhaustive sourceFormat</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch sourceFormat</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49514[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49514) BKNormal</td></tr>
+	<tr><td port="e0" align="left">`3 = `3 + 1</td></tr>
+	<tr><td port="e1" align="left">var x = `3 - 1</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49513[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49513) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49512[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49512) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`3 &lt; `2))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49511[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49511) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49510[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49510) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 49512</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49509[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49509) BKSub</td></tr>
+	<tr><td port="e0" align="left">var `3 = 0</td></tr>
+	<tr><td port="e1" align="left">var `2 = destView.width</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49508[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49508) BKNormal</td></tr>
+	<tr><td port="e0" align="left">`1 = `1 + 1</td></tr>
+	<tr><td port="e1" align="left">var y = `1 - 1</td></tr>
+	<tr><td port="e2" align="left">var sourceView = sourceView.byteOffset</td></tr>
+	<tr><td port="e3" align="left">var sourcePosition = sourceView.stride * y</td></tr>
+	<tr><td port="e4" align="left">sourcePosition = sourceView + sourcePosition</td></tr>
+	<tr><td port="e5" align="left">var destView = destView.byteOffset</td></tr>
+	<tr><td port="e6" align="left">var destPosition = destView.stride * y</td></tr>
+	<tr><td port="e7" align="left">destPosition = destView + destPosition</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49507[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49507) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49506[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49506) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`1 &lt; `))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49505[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49505) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49504[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49504) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 49506</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49503[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49503) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp</td></tr>
+	<tr><td port="e2" align="left">var tmp = sourceFormat == destFormat</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49502[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49502) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var `1 = 0</td></tr>
+	<tr><td port="e1" align="left">var ` = destView.height</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49501[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49501) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = alphaPoint == null</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49500[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49500) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var blend = blend</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch blend</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49499[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49499) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! useAlphaImage</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49498[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49498) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49497[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49497) BKConditional</td></tr>
+	<tr><td port="e0" align="left">blend = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49496[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49496) BKConditional</td></tr>
+	<tr><td port="e0" align="left">blend = ! image.get_transparent()</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49495[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49495) BKConditional</td></tr>
+	<tr><td port="e0" align="left">blend = true</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49494[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49494) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var useAlphaImage = useAlphaImage</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch useAlphaImage</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49493[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49493) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var blend</td></tr>
+	<tr><td port="e1" align="left">var blend = ! mergeAlpha</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch blend</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49492[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49492) BKConditional</td></tr>
+	<tr><td port="e0" align="left">useAlphaImage = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49491[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49491) BKConditional</td></tr>
+	<tr><td port="e0" align="left">useAlphaImage = alphaImage.get_transparent()</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49490[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49490) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var sourceView = new lime._internal.graphics._ImageDataUtil.ImageDataView(sourceImage, sourceRect)</td></tr>
+	<tr><td port="e1" align="left">var destRect = new lime.math.Rectangle(destPoint.x, destPoint.y, sourceView.width, sourceView.height)</td></tr>
+	<tr><td port="e2" align="left">var destView = new lime._internal.graphics._ImageDataUtil.ImageDataView(image, destRect)</td></tr>
+	<tr><td port="e3" align="left">var sourceFormat = sourceImage.buffer.format</td></tr>
+	<tr><td port="e4" align="left">var destFormat = image.buffer.format</td></tr>
+	<tr><td port="e5" align="left">var sourcePosition</td></tr>
+	<tr><td port="e6" align="left">var destPosition</td></tr>
+	<tr><td port="e7" align="left">var sourceAlpha</td></tr>
+	<tr><td port="e8" align="left">var destAlpha</td></tr>
+	<tr><td port="e9" align="left">var oneMinusSourceAlpha</td></tr>
+	<tr><td port="e10" align="left">var blendAlpha</td></tr>
+	<tr><td port="e11" align="left">var sourcePixel</td></tr>
+	<tr><td port="e12" align="left">var destPixel</td></tr>
+	<tr><td port="e13" align="left">var sourcePremultiplied = sourceImage.buffer.premultiplied</td></tr>
+	<tr><td port="e14" align="left">var destPremultiplied = image.buffer.premultiplied</td></tr>
+	<tr><td port="e15" align="left">var x = sourceImage.buffer.bitsPerPixel / 8</td></tr>
+	<tr><td port="e16" align="left">var sourceBytesPerPixel = cast x | 0</td></tr>
+	<tr><td port="e17" align="left">var x = image.buffer.bitsPerPixel / 8</td></tr>
+	<tr><td port="e18" align="left">var destBytesPerPixel = cast x | 0</td></tr>
+	<tr><td port="e19" align="left">var useAlphaImage</td></tr>
+	<tr><td port="e20" align="left">var useAlphaImage = alphaImage != null</td></tr>
+	<tr><td port="e21" align="left">@:cond-branch useAlphaImage</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49489[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49489) BKConditional</td></tr>
+	<tr><td port="e0" align="left">return</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49488[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49488) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49487[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49487) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = true</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49486[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49486) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = destData == null</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49485[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49485) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourceData = sourceImage.buffer.data</td></tr>
+	<tr><td port="e1" align="left">var destData = image.buffer.data</td></tr>
+	<tr><td port="e2" align="left">var tmp</td></tr>
+	<tr><td port="e3" align="left">var tmp = ! sourceData == null</td></tr>
+	<tr><td port="e4" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49484[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49484) BKConditional</td></tr>
+	<tr><td port="e0" align="left">image.buffer.data.set(sourceImage.buffer.data)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49483[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49483) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49482[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49482) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49481[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49481) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = image.get_format()</td></tr>
+	<tr><td port="e1" align="left">var tmp = sourceImage.get_format()</td></tr>
+	<tr><td port="e2" align="left">tmp = tmp == tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49480[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49480) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49479[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49479) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49478[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49478) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = mergeAlpha == false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49477[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49477) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49476[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49476) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49475[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49475) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = alphaPoint == null</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49474[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49474) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49473[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49473) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49472[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49472) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = alphaImage == null</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49471[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49471) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49470[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49470) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49469[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49469) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = destPoint.y == 0</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49468[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49468) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49467[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49467) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49466[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49466) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = destPoint.x == 0</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49465[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49465) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49464[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49464) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49463[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49463) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = sourceRect.y == 0</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49462[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49462) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49461[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49461) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49460[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49460) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = sourceRect.x == 0</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49459[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49459) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49458[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49458) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49457[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49457) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = sourceRect.height == sourceImage.height</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49456[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49456) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49455[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49455) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49454[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49454) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = sourceRect.width == sourceImage.width</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49453[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49453) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49452[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49452) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49451[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49451) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = image.height == sourceImage.height</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49450[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49450) BKFunctionEnd</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n49449[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(49449) BKFunctionBegin</td></tr>
+	<tr><td port="e0" align="left">var tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp</td></tr>
+	<tr><td port="e2" align="left">var tmp</td></tr>
+	<tr><td port="e3" align="left">var tmp</td></tr>
+	<tr><td port="e4" align="left">var tmp</td></tr>
+	<tr><td port="e5" align="left">var tmp</td></tr>
+	<tr><td port="e6" align="left">var tmp</td></tr>
+	<tr><td port="e7" align="left">var tmp</td></tr>
+	<tr><td port="e8" align="left">var tmp</td></tr>
+	<tr><td port="e9" align="left">var tmp</td></tr>
+	<tr><td port="e10" align="left">var tmp</td></tr>
+	<tr><td port="e11" align="left">var tmp = image.width == sourceImage.width</td></tr>
+	<tr><td port="e12" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(1) BKRoot</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n1:out -> n49449:in[label="CFGFunction"];
+}
