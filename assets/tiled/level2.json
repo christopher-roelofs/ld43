@@ -1,0 +1,6 @@
+{
+    "exit":{
+        "map":"assets/tiled/level.tmx",
+        "exitLocation": "exit"
+    }
+}
