@@ -9,7 +9,7 @@ import flixel.input.gamepad.FlxGamepad;
 
 class Player extends FlxSprite
 {
-	public var speed:Float = 100;
+	public var speed:Float = 200;
 	private var _sndStep:FlxSound;
 
 	public var _up:Bool;
