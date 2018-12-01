@@ -21,6 +21,23 @@ class Player extends FlxSprite {
 	public var walkSound:FlxSound;
 	public var currentState:String;
 
+	var actions = {
+		up: false,
+		left: false,
+		right: false,
+		down: false,
+		slide: false,
+		fire: false
+	};
+	var lastActions = {
+		up: false,
+		left: false,
+		right: false,
+		down: false,
+		slide: false,
+		fire: false
+	};
+
 	public function new(X:Float = 0, Y:Float = 0, state:MapState) {
 		super(X, Y);
 		loadGraphic(AssetPaths.snowman__png, true, 156, 156);
@@ -32,19 +49,22 @@ class Player extends FlxSprite {
 		drag.x = drag.y = 1600;
 		walkSound = FlxG.sound.load(AssetPaths.snowman_walk_snow__ogg, .1);
 		currentState = "standing";
+		this.mapState = state;
 	}
 
-	private function movement():Void {
-		_up = false;
-		_down = false;
-		_left = false;
-		_right = false;
+	private function checkInput():Void {
+		var _up = false;
+		var _down = false;
+		var _left = false;
+		var _right = false;
+		var _fire = false;
 
 		#if !FLX_NO_KEYBOARD
 		_up = FlxG.keys.anyPressed([UP, W]);
 		_down = FlxG.keys.anyPressed([DOWN, S]);
 		_left = FlxG.keys.anyPressed([LEFT, A]);
 		_right = FlxG.keys.anyPressed([RIGHT, D]);
+		_fire = FlxG.keys.pressed.SPACE;
 		#end
 		#if mobile
 		var virtualPad = MapState.virtualPad;
@@ -52,6 +72,7 @@ class Player extends FlxSprite {
 		_down = _down || virtualPad.buttonDown.pressed;
 		_left = _left || virtualPad.buttonLeft.pressed;
 		_right = _right || virtualPad.buttonRight.pressed;
+		// _fire = ?
 		#end
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
@@ -61,6 +82,7 @@ class Player extends FlxSprite {
 			_down = gamepad.pressed.DPAD_DOWN;
 			_left = gamepad.pressed.DPAD_LEFT;
 			_right = gamepad.pressed.DPAD_RIGHT;
+			// _fire = ?
 		}
 
 		if (_up && _down)
@@ -68,29 +90,37 @@ class Player extends FlxSprite {
 		if (_left && _right)
 			_left = _right = false;
 
-		if (_up || _down || _left || _right) {
+		actions.up = _up;
+		actions.down = _down;
+		actions.left = _left;
+		actions.right = _right;
+		actions.fire = _fire;
+	}
+
+	public function movement():Void {
+		if (actions.up || actions.down || actions.left || actions.right) {
 			updateAssetState("walking");
 			var mA:Float = 0;
-			if (_up) {
+			if (actions.up) {
 				mA = -90;
-				if (_left)
+				if (actions.left)
 					mA -= 45;
-				else if (_right)
+				else if (actions.right)
 					mA += 45;
 
 				facing = FlxObject.UP;
-			} else if (_down) {
+			} else if (actions.down) {
 				mA = 90;
-				if (_left)
+				if (actions.left)
 					mA += 45;
-				else if (_right)
+				else if (actions.right)
 					mA -= 45;
 
 				facing = FlxObject.DOWN;
-			} else if (_left) {
+			} else if (actions.left) {
 				mA = 180;
 				facing = FlxObject.LEFT;
-			} else if (_right) {
+			} else if (actions.right) {
 				mA = 0;
 				facing = FlxObject.RIGHT;
 			}
@@ -121,12 +151,12 @@ class Player extends FlxSprite {
 	}
 
 	public function playWalkSound() {
-		// trace("Playing walk sound");
+		trace("Playing walk sound");
 		walkSound.play();
 	}
 
 	public function stopWalkSound() {
-		// trace("Stopping walk sound");
+		trace("Stopping walk sound");
 		walkSound.stop();
 	}
 
@@ -134,7 +164,7 @@ class Player extends FlxSprite {
 		if (state == currentState) {
 			return;
 		}
-		// trace("state: '" + currentState + "' -> '" + state + "'");
+		trace("state: '" + currentState + "' -> '" + state + "'");
 		currentState = state;
 
 		switch (state) {
@@ -147,8 +177,29 @@ class Player extends FlxSprite {
 		}
 	}
 
+	private function updateLastActions() {
+		lastActions.up = actions.up;
+		lastActions.down = actions.down;
+		lastActions.left = actions.left;
+		lastActions.right = actions.right;
+		lastActions.fire = actions.fire;
+	}
+
 	override public function update(elapsed:Float):Void {
+		updateLastActions();
+
+		checkInput();
+
 		movement();
+
+		// fire key down
+		if (actions.fire && !lastActions.fire) {
+			trace("Firing");
+			var snowball = new Projectile(x, y, facing);
+			mapState.addProjectile(snowball);
+			snowball.doLaunch();
+		}
+
 		super.update(elapsed);
 	}
 }
