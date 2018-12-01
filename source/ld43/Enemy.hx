@@ -96,6 +96,10 @@ class Enemy extends FlxSprite {
 		}
 	}
 
+        public function handleProjectileCollision(projectile:Projectile):Void {
+                this.kill();
+        }
+
 	override public function update(elapsed:Float):Void {
 		_brain.update();
 		super.update(elapsed);
