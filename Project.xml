@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="drifter" file="drifter" main="Main" version="0.0.1" company="HaxeFlixel" />
+	<app title="ld43" file="ld43" main="Main" version="0.0.1" company="HaxeFlixel" />
 
 	
 	

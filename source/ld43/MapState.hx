@@ -1,7 +1,7 @@
 	
-package drifter;
+package ld43;
 
-import drifter.TiledLevel;
+import ld43.TiledLevel;
 
 import flixel.FlxG;
 import flixel.FlxObject;
