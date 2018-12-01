@@ -67,5 +67,7 @@ class MapState extends FlxSubState
 		// Collide with foreground tile layer
 		level.collideWithLevel(level.enemy);
 		level.collideWithObjects(level.enemy);
+		level.checkEnemyVision(level.enemy);
 	}	
+	
 }
