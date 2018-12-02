@@ -24,7 +24,7 @@ class Enemy extends FlxSprite {
 
 	public function new(X:Float = 0, Y:Float = 0) {
 		super(X, Y);
-		loadGraphic(AssetPaths.squirel__png, true, 78,78);
+		loadGraphic(AssetPaths.squirrel__png, true, 78,78);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
 		animation.add("d", [0, 1, 0, 1], 6, false);
@@ -36,6 +36,9 @@ class Enemy extends FlxSprite {
 		_brain = new FSM(idle);
 		_idleTmr = 0;
 		playerPos = FlxPoint.get();
+                animation.play("idle");
+        //scale.set(2,2);
+        //updateHitbox();
 	}
 
 	override public function draw():Void {
@@ -54,13 +57,16 @@ class Enemy extends FlxSprite {
 
 			switch (facing) {
 				case FlxObject.LEFT, FlxObject.RIGHT:
-					animation.play("lr");
+                                trace("Playing lr animation");
+				animation.play("lr");
 
 				case FlxObject.UP:
-					animation.play("u");
-
+                                trace("Playing lr animation");
+				animation.play("u");
+                                
 				case FlxObject.DOWN:
-					animation.play("d");
+                                trace("Playing lr animation");
+				animation.play("d");
 			}
 		}
 		super.draw();
@@ -68,11 +74,14 @@ class Enemy extends FlxSprite {
 
 	public function idle():Void {
 		if (seesPlayer) {
-			_brain.activeState = chase;
+//			_brain.activeState = chase;
 		} else if (_idleTmr <= 0) {
-			if (FlxG.random.bool(1)) {
+                        trace("idle timer up");
+			if (FlxG.random.bool(50)) {
 				_moveDir = -1;
 				velocity.x = velocity.y = 0;
+                                trace("standing still");
+                                animation.play("idle");
 			} else {
 				animation.play("idle");
 				_moveDir = FlxG.random.int(0, 8) * 45;
@@ -80,8 +89,10 @@ class Enemy extends FlxSprite {
 				velocity.rotate(FlxPoint.weak(), _moveDir);
 			}
 			_idleTmr = FlxG.random.int(1, 4);
-		} else
+		} else {
 			_idleTmr -= FlxG.elapsed;
+                        animation.play("idle");
+                }
 	}
 
 	public function chase():Void {

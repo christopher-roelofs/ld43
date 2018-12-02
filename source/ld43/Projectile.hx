@@ -65,7 +65,7 @@ class Projectile extends FlxSprite
                 angularVelocity=720;
                 switch(playerFacing) {
                         case FlxObject.UP:
-                        velocity.set(0,-600);
+                        velocity.set(0,0-speed);
                         x+=136;
                         return;
                         case FlxObject.DOWN:
