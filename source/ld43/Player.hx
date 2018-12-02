@@ -41,7 +41,7 @@ class Player extends FlxSprite {
 
 	public function new(X:Float = 0, Y:Float = 0, state:MapState) {
 		super(X, Y);
-		loadGraphic(AssetPaths.snowman__png, true, 114, 114);
+		loadGraphic(AssetPaths.snowman__png, true, 312, 312);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
 		animation.add("d", [12,13], 4, false);

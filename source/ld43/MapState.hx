@@ -13,6 +13,7 @@ import flixel.util.FlxColor;
 import flixel.ui.FlxVirtualPad;
 import flixel.FlxSubState;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
 
 class MapState extends FlxSubState {
 	public var level:TiledLevel;
@@ -22,6 +23,7 @@ class MapState extends FlxSubState {
 
         public var weather:Weather;
 	public static var virtualPad:FlxVirtualPad;
+	private static var respawnTime:Int = 5; // seconds
 	
 
 	override public function create():Void {
@@ -74,6 +76,8 @@ class MapState extends FlxSubState {
 		//score.alignment = FlxTextAlign.RIGHT;
 		score.text = "SCORE: ";
 		add(score);
+
+		new FlxTimer().start(respawnTime, spawnTimerCallback,0);
 	}
 
 	override public function update(elapsed:Float):Void {
@@ -108,7 +112,12 @@ class MapState extends FlxSubState {
                 FlxG.overlap(projectiles, level.enemiesGroup, projectileEnemyCollision);
 		FlxG.overlap(level.player,level.snowpileGroup,level.handlePlayerSnowPileCollision);
 
+
         }
+
+	public function spawnTimerCallback(timer:FlxTimer):Void {
+		level.spawnEnemies();
+	}
 
         public function projectileEnemyCollision(projectile:Projectile, enemy:Enemy) {
                 enemy.handleProjectileCollision(projectile);

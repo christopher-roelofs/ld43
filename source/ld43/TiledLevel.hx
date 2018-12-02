@@ -115,12 +115,12 @@ class TiledLevel extends TiledMap {
 
 	public function spawnEnemies() {
 		for (spawnPoint in enemySpawns) {
-			for (i in 0...FlxG.random.int(1,5)) {
+			for (i in 0...FlxG.random.int(1, 5)) {
 				enemy = new Enemy(spawnPoint.x, spawnPoint.y);
-				// enemiesGroup.add(enemy);
+				enemiesGroup.add(enemy);
 			}
 		}
-	};
+	}
 
 	public function loadObjects(state:MapState) {
 		var layer:TiledObjectLayer;
