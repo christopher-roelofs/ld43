@@ -50,6 +50,11 @@ class TiledLevel extends TiledMap {
 	// Sprites of images layers
 	public var imagesLayer:FlxGroup;
 	public var enemiesGroup:FlxGroup = new FlxGroup();
+<<<<<<< HEAD
+=======
+        public var deadEnemiesGroup:FlxGroup = new FlxGroup();
+	public var score:Int = 0;
+>>>>>>> 3f18487b1fc5474c1bf7c935fe6951fae61927cf
 
 	private var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
@@ -116,8 +121,13 @@ class TiledLevel extends TiledMap {
 	public function spawnEnemies() {
 		for (spawnPoint in enemySpawns) {
 			for (i in 0...FlxG.random.int(1, 5)) {
+<<<<<<< HEAD
 				enemy = new Enemy(spawnPoint.x, spawnPoint.y);
 				// enemiesGroup.add(enemy);
+=======
+				enemy = new Enemy(spawnPoint.x, spawnPoint.y,this);
+				enemiesGroup.add(enemy);
+>>>>>>> 3f18487b1fc5474c1bf7c935fe6951fae61927cf
 			}
 		}
 	}

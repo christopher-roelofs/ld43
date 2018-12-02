@@ -18,25 +18,28 @@ class Enemy extends FlxSprite {
 	var _brain:FSM;
 	var _idleTmr:Float;
 	var _moveDir:Float;
-
+        var level:TiledLevel;
+        
 	public var seesPlayer:Bool = false;
 	public var playerPos(default, null):FlxPoint;
 
-	public function new(X:Float = 0, Y:Float = 0) {
+	public function new(X:Float = 0, Y:Float = 0, tiledLevel:TiledLevel) {
 		super(X, Y);
+                this.level = tiledLevel;
 		loadGraphic(AssetPaths.squirrel__png, true, 78, 78);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
 		animation.add("d", [0, 1, 0, 1], 6, false);
 		animation.add("lr", [2, 3, 2, 3], 6, false);
 		animation.add("u", [4, 5, 4, 5], 6, false);
-		animation.add("idle", [6, 7, 6, 7], 6, false);
-		animation.add("dead", [8], 1, false);
+		animation.add("idle", [7,7,6,7,6,7], 6, false);
+		animation.add("dead", [8, 8, 8], 1, false);
 		drag.x = drag.y = 10;
 		_brain = new FSM(idle);
 		_idleTmr = 0;
 		playerPos = FlxPoint.get();
 		animation.play("idle");
+                alive=true;
 		// scale.set(2,2);
 		// updateHitbox();
 	}
@@ -97,12 +100,22 @@ class Enemy extends FlxSprite {
 		}
 	}
 
-	public function handleProjectileCollision(projectile:Projectile):Void {
-		this.kill();
+	public function handleProjectileCollision(projectile:Projectile):Void {                
+                animation.play("dead");                
+                alive = false;
+                velocity.x = velocity.y = 0;
+                allowCollisions = 0;
+                level.enemiesGroup.remove(this);
+                level.deadEnemiesGroup.add(this);
+                
 	}
 
 	override public function update(elapsed:Float):Void {
-		_brain.update();
+                if(alive) {
+		        _brain.update();
+                } else if(animation.finished) {                        
+                        this.kill();
+                }
 		super.update(elapsed);
 	}
 }

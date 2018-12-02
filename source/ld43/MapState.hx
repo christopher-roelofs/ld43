@@ -49,6 +49,9 @@ class MapState extends FlxSubState {
 		// Add foreground tiles after adding level objects, so these tiles render on top of player
 		add(level.foregroundTiles);
 
+                //dead enemies should be behind most things
+                add(level.deadEnemiesGroup);
+                
 		// Load objects
 		add(level.objectsLayer);
 
