@@ -49,7 +49,7 @@ class MapState extends FlxSubState {
 		// Load triggers
 		add(level.triggersLayer);
 
-		//add(level.enemiesGroup);
+		add(level.enemiesGroup);
 
 
 		destroySubStates = false;

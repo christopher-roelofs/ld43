@@ -20,6 +20,7 @@ class Player extends FlxSprite {
 	public var _right:Bool;
 	public var walkSound:FlxSound;
 	public var currentState:String;
+	private var currentScale:Float = 1;
 
 	var actions = {
 		up: false,
@@ -38,25 +39,45 @@ class Player extends FlxSprite {
 		fire: false
 	};
 
-	public function takeDamage(){
-		// scale.set(.7,.7);
-		// updateHitbox();
-		//trace('damage taken');
-	};
-
 	public function new(X:Float = 0, Y:Float = 0, state:MapState) {
 		super(X, Y);
-		loadGraphic(AssetPaths.snowman__png, true, 156, 156);
+		loadGraphic(AssetPaths.snowman__png, true, 312, 312);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
-		animation.add("d", [0, 1, 0, 2, 0], 6, false);
-		animation.add("lr", [3, 4, 3, 5, 3], 6, false);
-		animation.add("u", [6, 7, 6, 8, 6], 6, false);
+		animation.add("d", [0], 1, false);
+		animation.add("lr", [1], 1, false);
+		animation.add("u", [2], 1, false);
 		drag.x = drag.y = 1600;
 		walkSound = FlxG.sound.load(AssetPaths.snowman_walk_snow__ogg, .1);
 		currentState = "standing";
 		this.mapState = state;
+
+		var newScale:Float = this.currentScale - .5;
+		scale.set(newScale,newScale);
+		updateHitbox();
+		this.currentScale = newScale;
 	}
+
+	private function increaseMass() {
+		var newScale:Float = this.currentScale + .03;
+		scale.set(newScale,newScale);
+		updateHitbox();
+		this.currentScale = newScale;
+	};
+
+	public function takeDamage() {
+		var newScale:Float = this.currentScale - .0002;
+		scale.set(newScale,newScale);
+		updateHitbox();
+		this.currentScale = newScale;
+	};
+
+	public function decreaseMass() {
+		var newScale:Float = this.currentScale - .005;
+		scale.set(newScale,newScale);
+		updateHitbox();
+		this.currentScale = newScale;
+	};
 
 	private function checkInput():Void {
 		var _up = false;
@@ -191,6 +212,10 @@ class Player extends FlxSprite {
 		lastActions.fire = actions.fire;
 	}
 
+	public function handleSnowPileCollision() {
+		this.increaseMass();
+	};
+
 	override public function update(elapsed:Float):Void {
 		updateLastActions();
 
@@ -204,6 +229,7 @@ class Player extends FlxSprite {
 			var snowball = new Projectile(x, y, facing);
 			mapState.addProjectile(snowball);
 			snowball.doLaunch();
+			this.decreaseMass();
 		}
 
 		super.update(elapsed);

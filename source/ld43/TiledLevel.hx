@@ -271,6 +271,7 @@ class TiledLevel extends TiledMap {
 
 	public function handlePlayerSnowPileCollision(player:Player,snowpile:SnowPile){
 			snowpile.handlePlayerCollision();
+			player.handleSnowPileCollision();
 		}
 
 	public function collideWithEnemies(obj, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool {
