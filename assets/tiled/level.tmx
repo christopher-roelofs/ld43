@@ -34,6 +34,6 @@
   <object id="115" name="enemy spawn" type="enemy_spawn" x="1174.18" y="891.333" width="21.3333" height="17.3333"/>
   <object id="116" name="enemy spawn" type="enemy_spawn" x="874.182" y="906.485" width="21.3333" height="17.3333"/>
   <object id="117" name="enemy spawn" type="enemy_spawn" x="395.394" y="906.485" width="21.3333" height="17.3333"/>
-  <object id="119" name="snow pile" type="snowpile" x="527.273" y="375.758" width="27.2727" height="27.2727"/>
+  <object id="119" name="snow pile" type="snowpile" x="797.273" y="445.758" width="27.2727" height="27.2727"/>
  </objectgroup>
 </map>

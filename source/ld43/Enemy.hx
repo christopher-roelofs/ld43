@@ -24,7 +24,7 @@ class Enemy extends FlxSprite {
 
 	public function new(X:Float = 0, Y:Float = 0) {
 		super(X, Y);
-		loadGraphic(AssetPaths.squirel__png, true, 39, 39);
+		loadGraphic(AssetPaths.squirel__png, true, 78,78);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
 		animation.add("d", [0, 1, 0, 1], 6, false);
@@ -34,8 +34,8 @@ class Enemy extends FlxSprite {
 		_brain = new FSM(idle);
 		_idleTmr = 0;
 		playerPos = FlxPoint.get();
-        scale.set(2,2);
-        updateHitbox();
+        //scale.set(2,2);
+        //updateHitbox();
 	}
 
 	override public function draw():Void {

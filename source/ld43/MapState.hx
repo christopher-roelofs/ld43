@@ -49,7 +49,7 @@ class MapState extends FlxSubState {
 		// Load triggers
 		add(level.triggersLayer);
 
-		add(level.enemiesGroup);
+		//add(level.enemiesGroup);
 
 
 		destroySubStates = false;
@@ -68,6 +68,8 @@ class MapState extends FlxSubState {
 
 		level.collidePlayerWithEnemies();
 
+		
+
 		// Collide enemy with foreground tile layer
 		level.collideWithLevel(level.enemiesGroup);
 		level.collideWithObjects(level.enemiesGroup);
@@ -85,6 +87,7 @@ class MapState extends FlxSubState {
                         }
                 }
                 FlxG.overlap(projectiles, level.enemiesGroup, projectileEnemyCollision);
+		FlxG.overlap(level.player,level.snowpileGroup,level.handlePlayerSnowPileCollision);
 
         }
 

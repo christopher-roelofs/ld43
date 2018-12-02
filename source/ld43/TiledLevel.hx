@@ -193,7 +193,7 @@ class TiledLevel extends TiledMap {
 				enemySpawns.push(position);
 
 			case "snowpile":
-				var snowpile = new SnowPile(x,y);
+				var snowpile = new SnowPile(x, y);
 				snowpileGroup.add(snowpile);
 
 			case "entrance", "exit":
@@ -268,6 +268,10 @@ class TiledLevel extends TiledMap {
 			player.takeDamage();
 		}
 	}
+
+	public function handlePlayerSnowPileCollision(player:Player,snowpile:SnowPile){
+			snowpile.handlePlayerCollision();
+		}
 
 	public function collideWithEnemies(obj, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool {
 		//	IMPORTANT: Always collide the map with objects, not the other way around.

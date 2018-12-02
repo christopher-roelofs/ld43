@@ -12,5 +12,9 @@ class SnowPile extends FlxSprite
 		super(X, Y);
         loadGraphic(AssetPaths.snowpile__png, true, 117,117);
 	}
+
+	public function handlePlayerCollision(){
+		this.kill();
+	}
 	
 }
