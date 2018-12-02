@@ -32,7 +32,7 @@ class TiledLevel extends TiledMap {
 
 	// Array of tilemaps used for collision
 	public var foregroundTiles:FlxGroup;
-	public var objectsLayer:FlxGroup;
+	public var objectsLayer:FlxGroup = new FlxGroup();
 	public var triggersLayer:FlxGroup;
 	public var snowpileGroup:FlxGroup;
 	public var backgroundLayer:FlxGroup;
@@ -48,7 +48,7 @@ class TiledLevel extends TiledMap {
 	public var enemy:Enemy;
 	// Sprites of images layers
 	public var imagesLayer:FlxGroup;
-	public var enemiesGroup:FlxGroup;
+	public var enemiesGroup:FlxGroup = new FlxGroup();
 	public var score:Int = 0;
 
 	private var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
@@ -57,7 +57,6 @@ class TiledLevel extends TiledMap {
 		super(tiledLevel);
 		imagesLayer = new FlxGroup();
 		foregroundTiles = new FlxGroup();
-		objectsLayer = new FlxGroup();
 		triggersLayer = new FlxGroup();
 		snowpileGroup = new FlxGroup();
 		backgroundLayer = new FlxGroup();
@@ -70,8 +69,8 @@ class TiledLevel extends TiledMap {
 
 		loadImages();
 		loadObjects(state);
-		loadEnemies(objectsLayer);
-           
+		spawnEnemies();
+
 		// Load Tile Maps
 		for (layer in layers) {
 			if (layer.type != TiledLayerType.TILE)
@@ -114,11 +113,12 @@ class TiledLevel extends TiledMap {
 		}
 	}
 
-	public function loadEnemies(objectsLayer) {
-		enemiesGroup = new FlxGroup();
+	public function spawnEnemies() {
 		for (spawnPoint in enemySpawns) {
-			enemy = new Enemy(spawnPoint.x, spawnPoint.y);
-			enemiesGroup.add(enemy);
+			for (i in 0...FlxG.random.int(1,5)) {
+				enemy = new Enemy(spawnPoint.x, spawnPoint.y);
+				enemiesGroup.add(enemy);
+			}
 		}
 	};
 

@@ -20,8 +20,8 @@ class Player extends FlxSprite {
 	public var _right:Bool;
 	public var walkSound:FlxSound;
 	public var currentState:String;
-	private var currentScale:Float = 1;
 
+	private var currentScale:Float = 1;
 	var actions = {
 		up: false,
 		left: false,
@@ -53,30 +53,40 @@ class Player extends FlxSprite {
 		this.mapState = state;
 
 		var newScale:Float = this.currentScale - .5;
-		scale.set(newScale,newScale);
+		scale.set(newScale, newScale);
 		updateHitbox();
 		this.currentScale = newScale;
 	}
 
 	private function increaseMass() {
 		var newScale:Float = this.currentScale + .03;
-		scale.set(newScale,newScale);
+		scale.set(newScale, newScale);
 		updateHitbox();
 		this.currentScale = newScale;
 	};
 
 	public function takeDamage() {
-		var newScale:Float = this.currentScale - .0005;
-		scale.set(newScale,newScale);
-		updateHitbox();
-		this.currentScale = newScale;
+		if (currentScale > .3) {
+			// trace(currentScale);
+			var newScale:Float = this.currentScale - .0005;
+			scale.set(newScale, newScale);
+			updateHitbox();
+			this.currentScale = newScale;
+		} else {
+			// die
+		}
 	};
 
 	public function decreaseMass() {
-		var newScale:Float = this.currentScale - .005;
-		scale.set(newScale,newScale);
-		updateHitbox();
-		this.currentScale = newScale;
+		if (currentScale > .3) {
+			// trace(currentScale);
+			var newScale:Float = this.currentScale - .005;
+			scale.set(newScale, newScale);
+			updateHitbox();
+			this.currentScale = newScale;
+		} else {
+			// die
+		}
 	};
 
 	private function checkInput():Void {
@@ -99,7 +109,7 @@ class Player extends FlxSprite {
 		_down = _down || virtualPad.buttonDown.pressed;
 		_left = _left || virtualPad.buttonLeft.pressed;
 		_right = _right || virtualPad.buttonRight.pressed;
-		//_fire = _fire ||
+		// _fire = _fire ||
 		#end
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
@@ -108,7 +118,7 @@ class Player extends FlxSprite {
 			_down = gamepad.pressed.DPAD_DOWN;
 			_left = gamepad.pressed.DPAD_LEFT;
 			_right = gamepad.pressed.DPAD_RIGHT;
-			_fire =  gamepad.pressed.A;
+			_fire = gamepad.pressed.A;
 		}
 
 		if (_up && _down)
