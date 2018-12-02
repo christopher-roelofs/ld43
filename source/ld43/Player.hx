@@ -41,12 +41,12 @@ class Player extends FlxSprite {
 
 	public function new(X:Float = 0, Y:Float = 0, state:MapState) {
 		super(X, Y);
-		loadGraphic(AssetPaths.snowman__png, true, 312, 312);
+		loadGraphic(AssetPaths.snowman__png, true, 114, 114);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
-		animation.add("d", [0], 1, false);
-		animation.add("lr", [1], 1, false);
-		animation.add("u", [2], 1, false);
+		animation.add("d", [12,13], 4, false);
+		animation.add("lr", [4,5], 4, false);
+		animation.add("u", [8,9], 4, false);
 		drag.x = drag.y = 1600;
 		walkSound = FlxG.sound.load(AssetPaths.snowman_walk_snow__ogg, .1);
 		currentState = "standing";

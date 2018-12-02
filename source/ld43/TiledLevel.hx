@@ -117,7 +117,7 @@ class TiledLevel extends TiledMap {
 		for (spawnPoint in enemySpawns) {
 			for (i in 0...FlxG.random.int(1,5)) {
 				enemy = new Enemy(spawnPoint.x, spawnPoint.y);
-				enemiesGroup.add(enemy);
+				// enemiesGroup.add(enemy);
 			}
 		}
 	};
