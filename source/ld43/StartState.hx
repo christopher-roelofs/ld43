@@ -34,7 +34,7 @@ class StartState extends FlxState {
 		var bgImage = new FlxSprite(0,0,Assets.getBitmapData("assets/images/startscreen.png"));
 		add(bgImage);
 
-		_btnLaunch = new FlxSprite(550,575,Assets.getBitmapData("assets/images/launch.png"));
+		_btnLaunch = new FlxSprite(1260,60,Assets.getBitmapData("assets/images/play.png"));
 		add(_btnLaunch);
 		
 		super.create();

@@ -24,7 +24,7 @@ class Enemy extends FlxSprite {
 
 	public function new(X:Float = 0, Y:Float = 0) {
 		super(X, Y);
-		loadGraphic(AssetPaths.squirrel__png, true, 78,78);
+		loadGraphic(AssetPaths.squirrel__png, true, 78, 78);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
 		animation.add("d", [0, 1, 0, 1], 6, false);
@@ -36,9 +36,9 @@ class Enemy extends FlxSprite {
 		_brain = new FSM(idle);
 		_idleTmr = 0;
 		playerPos = FlxPoint.get();
-                animation.play("idle");
-        //scale.set(2,2);
-        //updateHitbox();
+		animation.play("idle");
+		// scale.set(2,2);
+		// updateHitbox();
 	}
 
 	override public function draw():Void {
@@ -57,13 +57,13 @@ class Enemy extends FlxSprite {
 
 			switch (facing) {
 				case FlxObject.LEFT, FlxObject.RIGHT:
-				animation.play("lr");
+					animation.play("lr");
 
 				case FlxObject.UP:
-				animation.play("u");
-                                
+					animation.play("u");
+
 				case FlxObject.DOWN:
-				animation.play("d");
+					animation.play("d");
 			}
 		}
 		super.draw();
@@ -76,8 +76,8 @@ class Enemy extends FlxSprite {
 			if (FlxG.random.bool(50)) {
 				_moveDir = -1;
 				velocity.x = velocity.y = 0;
-                                trace("Playing idle animation");
-                                animation.play("idle");
+				trace("Playing idle animation");
+				animation.play("idle");
 			} else {
 				_moveDir = FlxG.random.int(0, 8) * 45;
 				velocity.set(speed * 0.5, 0);
@@ -86,20 +86,20 @@ class Enemy extends FlxSprite {
 			_idleTmr = FlxG.random.int(1, 4);
 		} else {
 			_idleTmr -= FlxG.elapsed;
-                }
+		}
 	}
 
 	public function chase():Void {
 		if (!seesPlayer) {
 			_brain.activeState = idle;
 		} else {
-			FlxVelocity.moveTowardsPoint(this, playerPos, Std.int(speed*1.5));
+			FlxVelocity.moveTowardsPoint(this, playerPos, Std.int(speed * 1.5));
 		}
 	}
 
-        public function handleProjectileCollision(projectile:Projectile):Void {
-                this.kill();
-        }
+	public function handleProjectileCollision(projectile:Projectile):Void {
+		this.kill();
+	}
 
 	override public function update(elapsed:Float):Void {
 		_brain.update();
