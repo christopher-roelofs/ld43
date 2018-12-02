@@ -74,16 +74,14 @@ class Enemy extends FlxSprite {
 
 	public function idle():Void {
 		if (seesPlayer) {
-//			_brain.activeState = chase;
+			_brain.activeState = chase;
 		} else if (_idleTmr <= 0) {
                         trace("idle timer up");
 			if (FlxG.random.bool(50)) {
 				_moveDir = -1;
 				velocity.x = velocity.y = 0;
-                                trace("standing still");
                                 animation.play("idle");
 			} else {
-				animation.play("idle");
 				_moveDir = FlxG.random.int(0, 8) * 45;
 				velocity.set(speed * 0.5, 0);
 				velocity.rotate(FlxPoint.weak(), _moveDir);
@@ -91,7 +89,6 @@ class Enemy extends FlxSprite {
 			_idleTmr = FlxG.random.int(1, 4);
 		} else {
 			_idleTmr -= FlxG.elapsed;
-                        animation.play("idle");
                 }
 	}
 
