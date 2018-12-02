@@ -57,15 +57,12 @@ class Enemy extends FlxSprite {
 
 			switch (facing) {
 				case FlxObject.LEFT, FlxObject.RIGHT:
-                                trace("Playing lr animation");
 				animation.play("lr");
 
 				case FlxObject.UP:
-                                trace("Playing lr animation");
 				animation.play("u");
                                 
 				case FlxObject.DOWN:
-                                trace("Playing lr animation");
 				animation.play("d");
 			}
 		}
@@ -76,10 +73,10 @@ class Enemy extends FlxSprite {
 		if (seesPlayer) {
 			_brain.activeState = chase;
 		} else if (_idleTmr <= 0) {
-                        trace("idle timer up");
 			if (FlxG.random.bool(50)) {
 				_moveDir = -1;
 				velocity.x = velocity.y = 0;
+                                trace("Playing idle animation");
                                 animation.play("idle");
 			} else {
 				_moveDir = FlxG.random.int(0, 8) * 45;
