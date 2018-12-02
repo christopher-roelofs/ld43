@@ -23,7 +23,8 @@ class MapState extends FlxSubState {
 
         public var weather:Weather;
 	public static var virtualPad:FlxVirtualPad;
-	private static var respawnTime:Int = 5; // seconds
+	private static var enemyRespawnTime:Int = 5; // seconds
+	private static var snowPileRespawnTime:Int = 15; // seconds
 	
 
 	override public function create():Void {
@@ -77,7 +78,8 @@ class MapState extends FlxSubState {
 		score.text = "SCORE: ";
 		add(score);
 
-		new FlxTimer().start(respawnTime, spawnTimerCallback,0);
+		new FlxTimer().start(enemyRespawnTime, spawnEnemyTimerCallback,0);
+		new FlxTimer().start(30, spawnSnowPileTimerCallback,0);
 	}
 
 	override public function update(elapsed:Float):Void {
@@ -90,7 +92,7 @@ class MapState extends FlxSubState {
 
 		level.collidePlayerWithEnemies();
 
-		score.text = "SCORE: " + level.score;
+		score.text = "SCORE: " + level.player.score;
 		
 
 		// Collide enemy with foreground tile layer
@@ -115,7 +117,11 @@ class MapState extends FlxSubState {
 
         }
 
-	public function spawnTimerCallback(timer:FlxTimer):Void {
+	public function spawnEnemyTimerCallback(timer:FlxTimer):Void {
+		level.spawnSnowPile();
+	}
+
+	public function spawnSnowPileTimerCallback(timer:FlxTimer):Void {
 		level.spawnEnemies();
 	}
 
@@ -123,7 +129,7 @@ class MapState extends FlxSubState {
                 enemy.handleProjectileCollision(projectile);
                 projectile.handleEnemyCollision(enemy);
 		// put this in a better spot
-		level.score += 10;
+		level.player.score += 10;
         }
                 
         public function addProjectile(projectile:Projectile):Void {

@@ -14,6 +14,7 @@ class Player extends FlxSprite {
 
 	private var _sndStep:FlxSound;
 
+	public var score:Int = 0;
 	public var _up:Bool;
 	public var _down:Bool;
 	public var _left:Bool;
@@ -44,9 +45,9 @@ class Player extends FlxSprite {
 		loadGraphic(AssetPaths.snowman__png, true, 312, 312);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
-		animation.add("d", [12,13], 4, false);
-		animation.add("lr", [4,5], 4, false);
-		animation.add("u", [8,9], 4, false);
+		animation.add("d", [12, 13], 4, false);
+		animation.add("lr", [4, 5], 4, false);
+		animation.add("u", [8, 9], 4, false);
 		drag.x = drag.y = 1600;
 		walkSound = FlxG.sound.load(AssetPaths.snowman_walk_snow__ogg, .1);
 		currentState = "standing";
@@ -59,15 +60,21 @@ class Player extends FlxSprite {
 	}
 
 	private function increaseMass() {
-		var newScale:Float = this.currentScale + .03;
-		scale.set(newScale, newScale);
-		updateHitbox();
-		this.currentScale = newScale;
+		//trace(currentScale);
+		if (currentScale < .7) {
+			var newScale:Float = this.currentScale + .03;
+			scale.set(newScale, newScale);
+			updateHitbox();
+			this.currentScale = newScale;
+		}
+		else {
+			score += 5;
+		}
 	};
 
 	public function takeDamage() {
 		if (currentScale > .3) {
-			// trace(currentScale);
+			//trace(currentScale);
 			var newScale:Float = this.currentScale - .0005;
 			scale.set(newScale, newScale);
 			updateHitbox();
@@ -79,7 +86,7 @@ class Player extends FlxSprite {
 
 	public function decreaseMass() {
 		if (currentScale > .3) {
-			// trace(currentScale);
+			//trace(currentScale);
 			var newScale:Float = this.currentScale - .005;
 			scale.set(newScale, newScale);
 			updateHitbox();

@@ -1,5 +1,6 @@
 
 import ld43.StartState;
+import ld43.EndState;
 import flixel.FlxGame;
 import openfl.display.Sprite;
 

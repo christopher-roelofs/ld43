@@ -40,6 +40,7 @@ class TiledLevel extends TiledMap {
 
 	private var collidableTileLayers:Array<FlxTilemap>;
 	private var enemySpawns:Array<FlxPoint>;
+	private var pileSpawns:Array<FlxPoint>;
 	private var mapJson:Json;
 	private var levelState:MapState;
 	private var _a:Bool;
@@ -49,7 +50,6 @@ class TiledLevel extends TiledMap {
 	// Sprites of images layers
 	public var imagesLayer:FlxGroup;
 	public var enemiesGroup:FlxGroup = new FlxGroup();
-	public var score:Int = 0;
 
 	private var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
@@ -117,9 +117,16 @@ class TiledLevel extends TiledMap {
 		for (spawnPoint in enemySpawns) {
 			for (i in 0...FlxG.random.int(1, 5)) {
 				enemy = new Enemy(spawnPoint.x, spawnPoint.y);
-				enemiesGroup.add(enemy);
+				// enemiesGroup.add(enemy);
 			}
 		}
+	}
+
+	public function spawnSnowPile() {
+		var pileindex = FlxG.random.int(0, pileSpawns.length - 1);
+		var position:FlxPoint = pileSpawns[pileindex];
+		var pile = new SnowPile(position.x,position.x);
+		snowpileGroup.add(pile);
 	}
 
 	public function loadObjects(state:MapState) {
@@ -199,8 +206,13 @@ class TiledLevel extends TiledMap {
 				enemySpawns.push(position);
 
 			case "snowpile":
-				var snowpile = new SnowPile(x, y);
-				snowpileGroup.add(snowpile);
+				var position:FlxPoint = new FlxPoint(x, y);
+				if (pileSpawns == null)
+					pileSpawns = new Array<FlxPoint>();
+				pileSpawns.push(position);
+
+				var pile = new SnowPile(x, y);
+				snowpileGroup.add(pile);
 
 			case "entrance", "exit":
 				// get object properties from map json by object name

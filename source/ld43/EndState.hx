@@ -12,6 +12,7 @@ import flixel.math.FlxMath;
 import flixel.util.FlxDestroyUtil;
 using flixel.util.FlxSpriteUtil;
 import openfl.Assets;
+import ld43.StartState;
 
 
 /**
@@ -33,11 +34,11 @@ class EndState extends FlxState
 		var bgImage = new FlxSprite(0,0,Assets.getBitmapData("assets/images/endscreen.png"));
 		add(bgImage);
 
-		_btnRestart = new FlxSprite(1000,800,Assets.getBitmapData("assets/images/playagain.png"));
+		_btnRestart = new FlxSprite(280,200,Assets.getBitmapData("assets/images/playagain.png"));
 		add(_btnRestart);
 
 
-		_btnExit = new FlxSprite(800,800,Assets.getBitmapData("assets/images/exit.png"));
+		//_btnExit = new FlxSprite(800,800,Assets.getBitmapData("assets/images/exit.png"));
 		//add(_btnExit);
 		
 		// FlxG.sound.playMusic(AssetPaths.end_soundtrack__ogg, .5, true);
@@ -48,7 +49,11 @@ class EndState extends FlxState
 
 	private function clickRestart():Void
 	{
-		FlxG.switchState(new PlayState());
+		// FlxG.switchState(new StartState());
+
+		var mapState = new MapState();
+		mapState.file = "assets/tiled/level.tmx";
+		FlxG.switchState(mapState);
 	}
 
 	private function clickExit():Void
@@ -60,17 +65,11 @@ class EndState extends FlxState
    {
       super.update(elapsed);
 
-      if(FlxG.mouse.overlaps(_btnRestart)){
-         if(FlxG.mouse.justReleased){
-        	clickRestart();
-         }
-      }
-
-	  if(FlxG.mouse.overlaps(_btnExit)){
-         if(FlxG.mouse.justReleased){
-            clickExit();
-         }
-      }
+   		if (FlxG.mouse.overlaps(_btnRestart)) {
+			if (FlxG.mouse.justPressed) {
+				clickRestart();
+			}
+		}
 
    }
 
