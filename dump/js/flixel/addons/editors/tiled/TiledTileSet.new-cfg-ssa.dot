@@ -1,0 +1,564 @@
+digraph graphname {
+	node [shape=plaintext];
+n13333[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13333) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13332[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13332) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13331[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13331) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var x = imgWidth / this.tileWidth</td></tr>
+	<tr><td port="e1" align="left">var tmp = cast x | 0</td></tr>
+	<tr><td port="e2" align="left">this.numRows = tmp</td></tr>
+	<tr><td port="e3" align="left">var x = imgHeight / this.tileHeight</td></tr>
+	<tr><td port="e4" align="left">var tmp = cast x | 0</td></tr>
+	<tr><td port="e5" align="left">this.numCols = tmp</td></tr>
+	<tr><td port="e6" align="left">this.numTiles = this.numRows * this.numCols</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13330[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13330) BKNormal</td></tr>
+	<tr><td port="e0" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13329[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13329) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = false</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13328[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13328) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = this.tileHeight &gt; 0</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13327[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13327) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp = this.tileWidth &gt; 0</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13326[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13326) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13325[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13325) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13324[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13324) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13323[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13323) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var val = `_head.item</td></tr>
+	<tr><td port="e1" align="left">`_head = `_head.next</td></tr>
+	<tr><td port="e2" align="left">var frame = val</td></tr>
+	<tr><td port="e3" align="left">var frame = cast frame</td></tr>
+	<tr><td port="e4" align="left">var tmp = this.tileProps[id]</td></tr>
+	<tr><td port="e5" align="left">var tmp = frame.att.resolve(\"tileid\")</td></tr>
+	<tr><td port="e6" align="left">var tmp = Std.parseInt(tmp)</td></tr>
+	<tr><td port="e7" align="left">var x = frame.att.resolve(\"duration\")</td></tr>
+	<tr><td port="e8" align="left">var tmp = __js__(\"parseFloat\")</td></tr>
+	<tr><td port="e9" align="left">var tmp = tmp(x)</td></tr>
+	<tr><td port="e10" align="left">tmp.addAnimationFrame(tmp, tmp)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13322[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13322) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13321[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13321) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`_head != null))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13320[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13320) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13319[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13319) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 13321</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13318[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13318) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var `_head</td></tr>
+	<tr><td port="e1" align="left">var _this = node.node.resolve(\"animation\").nodes.resolve(\"frame\")</td></tr>
+	<tr><td port="e2" align="left">var head = _this.h</td></tr>
+	<tr><td port="e3" align="left">`_head = head</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13317[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13317) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = node.hasNode.resolve(\"animation\")</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13316[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13316) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13315[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13315) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var val = `_head.item</td></tr>
+	<tr><td port="e1" align="left">`_head = `_head.next</td></tr>
+	<tr><td port="e2" align="left">var prop = val</td></tr>
+	<tr><td port="e3" align="left">var prop = cast prop</td></tr>
+	<tr><td port="e4" align="left">this.tileProps[id].extend(prop)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13314[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13314) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13313[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13313) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`_head != null))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13312[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13312) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13311[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13311) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 13313</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13310[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13310) BKSub</td></tr>
+	<tr><td port="e0" align="left">var `_head</td></tr>
+	<tr><td port="e1" align="left">var _this = node.nodes.resolve(\"properties\")</td></tr>
+	<tr><td port="e2" align="left">var head = _this.h</td></tr>
+	<tr><td port="e3" align="left">`_head = head</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13309[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13309) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13308[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13308) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13307[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13307) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13306[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13306) BKConditional</td></tr>
+	<tr><td port="e0" align="left">_this.h[cast \"id\"] = value</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13305[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13305) BKConditional</td></tr>
+	<tr><td port="e0" align="left">_this.setReserved(\"id\", value)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13304[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13304) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = __js__(\"__map_reserved\")</td></tr>
+	<tr><td port="e1" align="left">var tmp = tmp[\"id\"]</td></tr>
+	<tr><td port="e2" align="left">var tmp = tmp != null</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13303[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13303) BKConditional</td></tr>
+	<tr><td port="e0" align="left">value = \"\" + id</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13302[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13302) BKConditional</td></tr>
+	<tr><td port="e0" align="left">value = \"null\"</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13301[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13301) BKSub</td></tr>
+	<tr><td port="e0" align="left">var _this = cast this</td></tr>
+	<tr><td port="e1" align="left">var value</td></tr>
+	<tr><td port="e2" align="left">var value = id == null</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch value</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13300[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13300) BKSub</td></tr>
+	<tr><td port="e0" align="left">var this = this.tileProps[id].keys</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13299[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13299) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var id = node.att.resolve(\"id\")</td></tr>
+	<tr><td port="e1" align="left">var id = Std.parseInt(id)</td></tr>
+	<tr><td port="e2" align="left">var tmp = this.tileProps</td></tr>
+	<tr><td port="e3" align="left">tmp[id] = new flixel.addons.editors.tiled.TiledTilePropertySet(id)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13298[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13298) BKConditional</td></tr>
+	<tr><td port="e0" align="left">continue</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13297[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13297) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var val = `_head.item</td></tr>
+	<tr><td port="e1" align="left">`_head = `_head.next</td></tr>
+	<tr><td port="e2" align="left">var node = val</td></tr>
+	<tr><td port="e3" align="left">var node = cast node</td></tr>
+	<tr><td port="e4" align="left">var tmp = ! node.has.resolve(\"id\")</td></tr>
+	<tr><td port="e5" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13296[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13296) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13295[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13295) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`_head != null))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13294[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13294) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13293[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13293) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 13295</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13292[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13292) BKSub</td></tr>
+	<tr><td port="e0" align="left">var `_head</td></tr>
+	<tr><td port="e1" align="left">var _this = source.nodes.resolve(\"tile\")</td></tr>
+	<tr><td port="e2" align="left">var head = _this.h</td></tr>
+	<tr><td port="e3" align="left">`_head = head</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13291[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13291) BKNormal</td></tr>
+	<tr><td port="e0" align="left">this.tileProps = new Array()</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13290[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13290) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13289[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13289) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var val = `_head.item</td></tr>
+	<tr><td port="e1" align="left">`_head = `_head.next</td></tr>
+	<tr><td port="e2" align="left">var prop = val</td></tr>
+	<tr><td port="e3" align="left">var prop = cast prop</td></tr>
+	<tr><td port="e4" align="left">this.properties.extend(prop)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13288[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13288) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13287[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13287) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`_head != null))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13286[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13286) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13285[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13285) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 13287</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13284[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13284) BKSub</td></tr>
+	<tr><td port="e0" align="left">var `_head</td></tr>
+	<tr><td port="e1" align="left">var _this = source.nodes.resolve(\"properties\")</td></tr>
+	<tr><td port="e2" align="left">var head = _this.h</td></tr>
+	<tr><td port="e3" align="left">`_head = head</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13283[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13283) BKNormal</td></tr>
+	<tr><td port="e0" align="left">this.properties = new flixel.addons.editors.tiled.TiledPropertySet()</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13282[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13282) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = source.att.resolve(\"margin\")</td></tr>
+	<tr><td port="e1" align="left">this.margin = Std.parseInt(tmp)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13281[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13281) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = source.has.resolve(\"margin\")</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13280[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13280) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = source.att.resolve(\"spacing\")</td></tr>
+	<tr><td port="e1" align="left">this.spacing = Std.parseInt(tmp)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13279[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13279) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = source.has.resolve(\"spacing\")</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13278[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13278) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = source.att.resolve(\"tileheight\")</td></tr>
+	<tr><td port="e1" align="left">this.tileHeight = Std.parseInt(tmp)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13277[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13277) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = source.has.resolve(\"tileheight\")</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13276[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13276) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = source.att.resolve(\"tilewidth\")</td></tr>
+	<tr><td port="e1" align="left">this.tileWidth = Std.parseInt(tmp)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13275[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13275) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = source.has.resolve(\"tilewidth\")</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13274[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13274) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var imgHeight = node.att.resolve(\"height\")</td></tr>
+	<tr><td port="e1" align="left">imgHeight = Std.parseInt(imgHeight)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13273[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13273) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var imgHeight = 0</td></tr>
+	<tr><td port="e1" align="left">var tmp = node.has.resolve(\"height\")</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13272[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13272) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var imgWidth = node.att.resolve(\"width\")</td></tr>
+	<tr><td port="e1" align="left">imgWidth = Std.parseInt(imgWidth)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13271[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13271) BKNormal</td></tr>
+	<tr><td port="e0" align="left">this.name = source.att.resolve(\"name\")</td></tr>
+	<tr><td port="e1" align="left">var imgWidth = 0</td></tr>
+	<tr><td port="e2" align="left">var tmp = node.has.resolve(\"width\")</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13270[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13270) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13269[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13269) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13268[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13268) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var id = node.att.resolve(\"id\")</td></tr>
+	<tr><td port="e1" align="left">var id = Std.parseInt(id)</td></tr>
+	<tr><td port="e2" align="left">var tmp = this.tileImagesSources</td></tr>
+	<tr><td port="e3" align="left">tmp[id] = new flixel.addons.editors.tiled.TiledImageTile(node)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13267[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13267) BKConditional</td></tr>
+	<tr><td port="e0" align="left">continue</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13266[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13266) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var val = `_head.item</td></tr>
+	<tr><td port="e1" align="left">`_head = `_head.next</td></tr>
+	<tr><td port="e2" align="left">var node = val</td></tr>
+	<tr><td port="e3" align="left">var node = cast node</td></tr>
+	<tr><td port="e4" align="left">var tmp = ! node.has.resolve(\"id\")</td></tr>
+	<tr><td port="e5" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13265[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13265) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13264[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13264) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! ((`_head != null))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13263[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13263) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13262[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13262) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 13264</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13261[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13261) BKSub</td></tr>
+	<tr><td port="e0" align="left">var `_head</td></tr>
+	<tr><td port="e1" align="left">var _this = source.nodes.resolve(\"tile\")</td></tr>
+	<tr><td port="e2" align="left">var head = _this.h</td></tr>
+	<tr><td port="e3" align="left">`_head = head</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13260[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13260) BKConditional</td></tr>
+	<tr><td port="e0" align="left">node = source.node.resolve(\"tile\")</td></tr>
+	<tr><td port="e1" align="left">this.imageSource = \"\"</td></tr>
+	<tr><td port="e2" align="left">this.tileImagesSources = new Array()</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13259[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13259) BKConditional</td></tr>
+	<tr><td port="e0" align="left">node = source.node.resolve(\"image\")</td></tr>
+	<tr><td port="e1" align="left">this.imageSource = node.att.resolve(\"source\")</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13258[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13258) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw \"TMX tileset misses source image or tiles\"</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13257[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13257) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var node</td></tr>
+	<tr><td port="e1" align="left">var tmp = source.hasNode.resolve(\"image\")</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13256[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13256) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp = ! source.has.resolve(\"source\")</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13255[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13255) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13254[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13254) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw \"Invalid TSX tileset path: \" + sourcePath</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13253[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13253) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var source = openfl.utils.Assets.getText(sourcePath)</td></tr>
+	<tr><td port="e1" align="left">var source = Xml.parse(source)</td></tr>
+	<tr><td port="e2" align="left">source = new haxe.xml.Fast(source)</td></tr>
+	<tr><td port="e3" align="left">source = source.node.resolve(\"tileset\")</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13252[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13252) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var sourcePath = source.att.resolve(\"source\")</td></tr>
+	<tr><td port="e1" align="left">var sourcePath = rootPath + sourcePath</td></tr>
+	<tr><td port="e2" align="left">var sourcePath = haxe.io.Path.normalize(sourcePath)</td></tr>
+	<tr><td port="e3" align="left">var tmp = openfl.utils.Assets.exists(sourcePath)</td></tr>
+	<tr><td port="e4" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13251[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13251) BKNormal</td></tr>
+	<tr><td port="e0" align="left">this.firstGID = tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp = source.has.resolve(\"source\")</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13250[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13250) BKConditional</td></tr>
+	<tr><td port="e0" align="left">tmp = 1</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13249[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13249) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = source.att.resolve(\"firstgid\")</td></tr>
+	<tr><td port="e1" align="left">tmp = Std.parseInt(tmp)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13248[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13248) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var tmp</td></tr>
+	<tr><td port="e1" align="left">var tmp = source.has.resolve(\"firstgid\")</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13247[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13247) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13246[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13246) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw \"Unknown TMX tileset format\"</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13245[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13245) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var bytes = cast data</td></tr>
+	<tr><td port="e1" align="left">var source = bytes.toString()</td></tr>
+	<tr><td port="e2" align="left">var source = Xml.parse(source)</td></tr>
+	<tr><td port="e3" align="left">source = new haxe.xml.Fast(source)</td></tr>
+	<tr><td port="e4" align="left">source = source.node.resolve(\"tileset\")</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13244[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13244) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var tmp = js.Boot.__instanceof(data, openfl.utils.ByteArrayData)</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13243[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13243) BKConditional</td></tr>
+	<tr><td port="e0" align="left">source = data</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13242[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13242) BKFunctionEnd</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n13241[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(13241) BKFunctionBegin</td></tr>
+	<tr><td port="e0" align="left">var source</td></tr>
+	<tr><td port="e1" align="left">this.numTiles = 16777215</td></tr>
+	<tr><td port="e2" align="left">this.numRows = this.numCols = 1</td></tr>
+	<tr><td port="e3" align="left">var tmp = js.Boot.__instanceof(data, haxe.xml.Fast)</td></tr>
+	<tr><td port="e4" align="left">@:cond-branch tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(1) BKRoot</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n1:out -> n13241:in[label="CFGFunction"];
+}

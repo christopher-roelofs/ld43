@@ -29,13 +29,13 @@ class Enemy extends FlxSprite {
 		setFacingFlip(FlxObject.RIGHT, true, false);
 		animation.add("d", [0, 1, 0, 1], 6, false);
 		animation.add("lr", [2, 3, 2, 3], 6, false);
-		animation.add("u", [4, 5, 5, 5], 6, false);
+		animation.add("u", [4, 5, 4, 5], 6, false);
+		animation.add("idle", [6, 7, 6, 7], 6, false);
+		animation.add("dead", [8], 1, false);
 		drag.x = drag.y = 10;
 		_brain = new FSM(idle);
 		_idleTmr = 0;
 		playerPos = FlxPoint.get();
-        //scale.set(2,2);
-        //updateHitbox();
 	}
 
 	override public function draw():Void {
@@ -74,8 +74,8 @@ class Enemy extends FlxSprite {
 				_moveDir = -1;
 				velocity.x = velocity.y = 0;
 			} else {
+				animation.play("idle");
 				_moveDir = FlxG.random.int(0, 8) * 45;
-
 				velocity.set(speed * 0.5, 0);
 				velocity.rotate(FlxPoint.weak(), _moveDir);
 			}

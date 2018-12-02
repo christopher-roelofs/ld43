@@ -17,6 +17,7 @@ class MapState extends FlxSubState {
 	public var level:TiledLevel;
 	public var file:String;
 	public var projectiles:FlxGroup;
+	public var score:FlxText;
 
 	
 	public static var virtualPad:FlxVirtualPad;
@@ -35,6 +36,7 @@ class MapState extends FlxSubState {
 		// Add backgrounds
 		add(level.backgroundLayer);
 
+
 		// Add static images
 		add(level.imagesLayer);
 
@@ -51,11 +53,23 @@ class MapState extends FlxSubState {
 
 		add(level.enemiesGroup);
 
+		// Add middlegrounds
+		add(level.middlegroundLayer);
+
 
 		destroySubStates = false;
 
 		projectiles = new FlxGroup();
                 add(projectiles);
+
+		// create score hud
+		score = new FlxText(0,0, 1000);
+		score.scrollFactor.set(0, 0); 
+		score.color = FlxColor.BLACK;
+		score.size = 32;
+		//score.alignment = FlxTextAlign.RIGHT;
+		score.text = "SCORE: ";
+		add(score);
 	}
 
 	override public function update(elapsed:Float):Void {
@@ -68,11 +82,12 @@ class MapState extends FlxSubState {
 
 		level.collidePlayerWithEnemies();
 
+		score.text = "SCORE: " + level.score;
 		
 
 		// Collide enemy with foreground tile layer
 		level.collideWithLevel(level.enemiesGroup);
-		level.collideWithObjects(level.enemiesGroup);
+		// level.collideWithObjects(level.enemiesGroup);
 		for (sprite in level.enemiesGroup) {
 			var enemy:Enemy = cast sprite;
 			level.checkEnemyVision(enemy);
@@ -94,6 +109,8 @@ class MapState extends FlxSubState {
         public function projectileEnemyCollision(projectile:Projectile, enemy:Enemy) {
                 enemy.handleProjectileCollision(projectile);
                 projectile.handleEnemyCollision(enemy);
+		// put this in a better spot
+		level.score += 10;
         }
                 
         public function addProjectile(projectile:Projectile):Void {

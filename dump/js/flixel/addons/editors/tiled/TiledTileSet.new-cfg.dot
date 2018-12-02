@@ -1,0 +1,105 @@
+digraph graphname {
+n13333 [shape=box,label="(13333)"];
+n13332 [shape=box,label="(13332)"];
+n13331 [shape=box,label="(13331)\nvar x = imgWidth / this.tileWidth\nvar tmp = cast x | 0\nthis.numRows = tmp\nvar x = imgHeight / this.tileHeight\nvar tmp = cast x | 0\nthis.numCols = tmp\nthis.numTiles = this.numRows * this.numCols"];
+n13330 [shape=box,label="(13330)\n@:cond-branch tmp"];
+n13329 [shape=box,label="(13329)\ntmp = false"];
+n13328 [shape=box,label="(13328)\ntmp = this.tileHeight > 0"];
+n13327 [shape=box,label="(13327)\nvar tmp\nvar tmp = this.tileWidth > 0\n@:cond-branch tmp"];
+n13326 [shape=box,label="(13326)"];
+n13325 [shape=box,label="(13325)\nLoops: 2"];
+n13324 [shape=box,label="(13324)\nLoops: 2"];
+n13323 [shape=box,label="(13323)\nLoops: 4, 2\nvar val = `_head.item\n`_head = `_head.next\nvar frame = val\nvar frame = cast frame\nvar tmp = this.tileProps[id]\nvar tmp = frame.att.resolve(\"tileid\")\nvar tmp = Std.parseInt(tmp)\nvar x = frame.att.resolve(\"duration\")\nvar tmp = __js__(\"parseFloat\")\nvar tmp = tmp(x)\ntmp.addAnimationFrame(tmp, tmp)"];
+n13322 [shape=box,label="(13322)\nLoops: 4, 2\nbreak"];
+n13321 [shape=box,label="(13321)\nLoops: 4, 2\nvar tmp = ! ((`_head != null))\n@:cond-branch tmp"];
+n13320 [shape=box,label="<loop-head>
+(13320)\nLoops: 4, 2"];
+n13319 [shape=box,label="(13319)\nLoops: 2\nwhile ((true)) @:block 13321"];
+n13318 [shape=box,label="(13318)\nLoops: 2\nvar `_head\nvar _this = node.node.resolve(\"animation\").nodes.resolve(\"frame\")\nvar head = _this.h\n`_head = head"];
+n13317 [shape=box,label="(13317)\nLoops: 2\nvar tmp = node.hasNode.resolve(\"animation\")\n@:cond-branch tmp"];
+n13316 [shape=box,label="(13316)\nLoops: 2"];
+n13315 [shape=box,label="(13315)\nLoops: 3, 2\nvar val = `_head.item\n`_head = `_head.next\nvar prop = val\nvar prop = cast prop\nthis.tileProps[id].extend(prop)"];
+n13314 [shape=box,label="(13314)\nLoops: 3, 2\nbreak"];
+n13313 [shape=box,label="(13313)\nLoops: 3, 2\nvar tmp = ! ((`_head != null))\n@:cond-branch tmp"];
+n13312 [shape=box,label="<loop-head>
+(13312)\nLoops: 3, 2"];
+n13311 [shape=box,label="(13311)\nLoops: 2\nwhile ((true)) @:block 13313"];
+n13310 [shape=box,label="(13310)\nLoops: 2\nvar `_head\nvar _this = node.nodes.resolve(\"properties\")\nvar head = _this.h\n`_head = head"];
+n13309 [shape=box,label="(13309)\nLoops: 2"];
+n13308 [shape=box,label="(13308)\nLoops: 2"];
+n13307 [shape=box,label="(13307)\nLoops: 2"];
+n13306 [shape=box,label="(13306)\nLoops: 2\n_this.h[cast \"id\"] = value"];
+n13305 [shape=box,label="(13305)\nLoops: 2\n_this.setReserved(\"id\", value)"];
+n13304 [shape=box,label="(13304)\nLoops: 2\nvar tmp = __js__(\"__map_reserved\")\nvar tmp = tmp[\"id\"]\nvar tmp = tmp != null\n@:cond-branch tmp"];
+n13303 [shape=box,label="(13303)\nLoops: 2\nvalue = \"\" + id"];
+n13302 [shape=box,label="(13302)\nLoops: 2\nvalue = \"null\""];
+n13301 [shape=box,label="(13301)\nLoops: 2\nvar _this = cast this\nvar value\nvar value = id == null\n@:cond-branch value"];
+n13300 [shape=box,label="(13300)\nLoops: 2\nvar this = this.tileProps[id].keys"];
+n13299 [shape=box,label="(13299)\nLoops: 2\nvar id = node.att.resolve(\"id\")\nvar id = Std.parseInt(id)\nvar tmp = this.tileProps\ntmp[id] = new flixel.addons.editors.tiled.TiledTilePropertySet(id)"];
+n13298 [shape=box,label="(13298)\nLoops: 2\ncontinue"];
+n13297 [shape=box,label="(13297)\nLoops: 2\nvar val = `_head.item\n`_head = `_head.next\nvar node = val\nvar node = cast node\nvar tmp = ! node.has.resolve(\"id\")\n@:cond-branch tmp"];
+n13296 [shape=box,label="(13296)\nLoops: 2\nbreak"];
+n13295 [shape=box,label="(13295)\nLoops: 2\nvar tmp = ! ((`_head != null))\n@:cond-branch tmp"];
+n13294 [shape=box,label="<loop-head>
+(13294)\nLoops: 2"];
+n13293 [shape=box,label="(13293)\nwhile ((true)) @:block 13295"];
+n13292 [shape=box,label="(13292)\nvar `_head\nvar _this = source.nodes.resolve(\"tile\")\nvar head = _this.h\n`_head = head"];
+n13291 [shape=box,label="(13291)\nthis.tileProps = new Array()"];
+n13290 [shape=box,label="(13290)"];
+n13289 [shape=box,label="(13289)\nLoops: 1\nvar val = `_head.item\n`_head = `_head.next\nvar prop = val\nvar prop = cast prop\nthis.properties.extend(prop)"];
+n13288 [shape=box,label="(13288)\nLoops: 1\nbreak"];
+n13287 [shape=box,label="(13287)\nLoops: 1\nvar tmp = ! ((`_head != null))\n@:cond-branch tmp"];
+n13286 [shape=box,label="<loop-head>
+(13286)\nLoops: 1"];
+n13285 [shape=box,label="(13285)\nwhile ((true)) @:block 13287"];
+n13284 [shape=box,label="(13284)\nvar `_head\nvar _this = source.nodes.resolve(\"properties\")\nvar head = _this.h\n`_head = head"];
+n13283 [shape=box,label="(13283)\nthis.properties = new flixel.addons.editors.tiled.TiledPropertySet()"];
+n13282 [shape=box,label="(13282)\nvar tmp = source.att.resolve(\"margin\")\nthis.margin = Std.parseInt(tmp)"];
+n13281 [shape=box,label="(13281)\nvar tmp = source.has.resolve(\"margin\")\n@:cond-branch tmp"];
+n13280 [shape=box,label="(13280)\nvar tmp = source.att.resolve(\"spacing\")\nthis.spacing = Std.parseInt(tmp)"];
+n13279 [shape=box,label="(13279)\nvar tmp = source.has.resolve(\"spacing\")\n@:cond-branch tmp"];
+n13278 [shape=box,label="(13278)\nvar tmp = source.att.resolve(\"tileheight\")\nthis.tileHeight = Std.parseInt(tmp)"];
+n13277 [shape=box,label="(13277)\nvar tmp = source.has.resolve(\"tileheight\")\n@:cond-branch tmp"];
+n13276 [shape=box,label="(13276)\nvar tmp = source.att.resolve(\"tilewidth\")\nthis.tileWidth = Std.parseInt(tmp)"];
+n13275 [shape=box,label="(13275)\nvar tmp = source.has.resolve(\"tilewidth\")\n@:cond-branch tmp"];
+n13274 [shape=box,label="(13274)\nvar imgHeight = node.att.resolve(\"height\")\nimgHeight = Std.parseInt(imgHeight)"];
+n13273 [shape=box,label="(13273)\nvar imgHeight = 0\nvar tmp = node.has.resolve(\"height\")\n@:cond-branch tmp"];
+n13272 [shape=box,label="(13272)\nvar imgWidth = node.att.resolve(\"width\")\nimgWidth = Std.parseInt(imgWidth)"];
+n13271 [shape=box,label="(13271)\nthis.name = source.att.resolve(\"name\")\nvar imgWidth = 0\nvar tmp = node.has.resolve(\"width\")\n@:cond-branch tmp"];
+n13270 [shape=box,label="(13270)"];
+n13269 [shape=box,label="(13269)"];
+n13268 [shape=box,label="(13268)\nLoops: 0\nvar id = node.att.resolve(\"id\")\nvar id = Std.parseInt(id)\nvar tmp = this.tileImagesSources\ntmp[id] = new flixel.addons.editors.tiled.TiledImageTile(node)"];
+n13267 [shape=box,label="(13267)\nLoops: 0\ncontinue"];
+n13266 [shape=box,label="(13266)\nLoops: 0\nvar val = `_head.item\n`_head = `_head.next\nvar node = val\nvar node = cast node\nvar tmp = ! node.has.resolve(\"id\")\n@:cond-branch tmp"];
+n13265 [shape=box,label="(13265)\nLoops: 0\nbreak"];
+n13264 [shape=box,label="(13264)\nLoops: 0\nvar tmp = ! ((`_head != null))\n@:cond-branch tmp"];
+n13263 [shape=box,label="<loop-head>
+(13263)\nLoops: 0"];
+n13262 [shape=box,label="(13262)\nwhile ((true)) @:block 13264"];
+n13261 [shape=box,label="(13261)\nvar `_head\nvar _this = source.nodes.resolve(\"tile\")\nvar head = _this.h\n`_head = head"];
+n13260 [shape=box,label="(13260)\nnode = source.node.resolve(\"tile\")\nthis.imageSource = \"\"\nthis.tileImagesSources = new Array()"];
+n13259 [shape=box,label="(13259)\nnode = source.node.resolve(\"image\")\nthis.imageSource = node.att.resolve(\"source\")"];
+n13258 [shape=box,label="(13258)\nthrow \"TMX tileset misses source image or tiles\""];
+n13257 [shape=box,label="(13257)\nvar node\nvar tmp = source.hasNode.resolve(\"image\")\n@:cond-branch tmp"];
+n13256 [shape=box,label="(13256)\nvar tmp = ! source.has.resolve(\"source\")\n@:cond-branch tmp"];
+n13255 [shape=box,label="(13255)"];
+n13254 [shape=box,label="(13254)\nthrow \"Invalid TSX tileset path: \" + sourcePath"];
+n13253 [shape=box,label="(13253)\nvar source = openfl.utils.Assets.getText(sourcePath)\nvar source = Xml.parse(source)\nsource = new haxe.xml.Fast(source)\nsource = source.node.resolve(\"tileset\")"];
+n13252 [shape=box,label="(13252)\nvar sourcePath = source.att.resolve(\"source\")\nvar sourcePath = rootPath + sourcePath\nvar sourcePath = haxe.io.Path.normalize(sourcePath)\nvar tmp = openfl.utils.Assets.exists(sourcePath)\n@:cond-branch tmp"];
+n13251 [shape=box,label="(13251)\nthis.firstGID = tmp\nvar tmp = source.has.resolve(\"source\")\n@:cond-branch tmp"];
+n13250 [shape=box,label="(13250)\ntmp = 1"];
+n13249 [shape=box,label="(13249)\nvar tmp = source.att.resolve(\"firstgid\")\ntmp = Std.parseInt(tmp)"];
+n13248 [shape=box,label="(13248)\nvar tmp\nvar tmp = source.has.resolve(\"firstgid\")\n@:cond-branch tmp"];
+n13247 [shape=box,label="(13247)"];
+n13246 [shape=box,label="(13246)\nthrow \"Unknown TMX tileset format\""];
+n13245 [shape=box,label="(13245)\nvar bytes = cast data\nvar source = bytes.toString()\nvar source = Xml.parse(source)\nsource = new haxe.xml.Fast(source)\nsource = source.node.resolve(\"tileset\")"];
+n13244 [shape=box,label="(13244)\nvar tmp = js.Boot.__instanceof(data, openfl.utils.ByteArrayData)\n@:cond-branch tmp"];
+n13243 [shape=box,label="(13243)\nsource = data"];
+n13242 [shape=box,label="<function-end>
+(13242)"];
+n13241 [shape=box,label="<function-begin>
+(13241)\nvar source\nthis.numTiles = 16777215\nthis.numRows = this.numCols = 1\nvar tmp = js.Boot.__instanceof(data, haxe.xml.Fast)\n@:cond-branch tmp"];
+n1 [shape=box,label="<root>
+(1)"];
+n1 -> n13241[label="function"];
+}

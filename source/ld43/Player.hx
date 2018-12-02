@@ -66,7 +66,7 @@ class Player extends FlxSprite {
 	};
 
 	public function takeDamage() {
-		var newScale:Float = this.currentScale - .0002;
+		var newScale:Float = this.currentScale - .0005;
 		scale.set(newScale,newScale);
 		updateHitbox();
 		this.currentScale = newScale;
@@ -99,17 +99,16 @@ class Player extends FlxSprite {
 		_down = _down || virtualPad.buttonDown.pressed;
 		_left = _left || virtualPad.buttonLeft.pressed;
 		_right = _right || virtualPad.buttonRight.pressed;
-		// _fire = ?
+		//_fire = _fire ||
 		#end
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 		if (gamepad != null) {
 			_up = gamepad.pressed.DPAD_UP;
 			_down = gamepad.pressed.DPAD_DOWN;
-			_down = gamepad.pressed.DPAD_DOWN;
 			_left = gamepad.pressed.DPAD_LEFT;
 			_right = gamepad.pressed.DPAD_RIGHT;
-			// _fire = ?
+			_fire =  gamepad.pressed.A;
 		}
 
 		if (_up && _down)

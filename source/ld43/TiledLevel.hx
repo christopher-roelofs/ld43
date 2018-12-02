@@ -20,6 +20,7 @@ import haxe.Json;
 import openfl.Assets;
 import flixel.input.gamepad.FlxGamepad;
 import flash.display.BitmapData;
+import flixel.text.FlxText;
 
 /**
  * @author Samuel Batista
@@ -35,6 +36,7 @@ class TiledLevel extends TiledMap {
 	public var triggersLayer:FlxGroup;
 	public var snowpileGroup:FlxGroup;
 	public var backgroundLayer:FlxGroup;
+	public var middlegroundLayer:FlxGroup;
 
 	private var collidableTileLayers:Array<FlxTilemap>;
 	private var enemySpawns:Array<FlxPoint>;
@@ -47,6 +49,7 @@ class TiledLevel extends TiledMap {
 	// Sprites of images layers
 	public var imagesLayer:FlxGroup;
 	public var enemiesGroup:FlxGroup;
+	public var score:Int = 0;
 
 	private var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
@@ -58,6 +61,7 @@ class TiledLevel extends TiledMap {
 		triggersLayer = new FlxGroup();
 		snowpileGroup = new FlxGroup();
 		backgroundLayer = new FlxGroup();
+		middlegroundLayer = new FlxGroup();
 		levelState = state;
 
 		// FlxG.log.redirectTraces = true;
@@ -67,7 +71,7 @@ class TiledLevel extends TiledMap {
 		loadImages();
 		loadObjects(state);
 		loadEnemies(objectsLayer);
-
+           
 		// Load Tile Maps
 		for (layer in layers) {
 			if (layer.type != TiledLayerType.TILE)
@@ -98,6 +102,8 @@ class TiledLevel extends TiledMap {
 
 			if (tileLayer.properties.contains("nocollide")) {
 				backgroundLayer.add(tilemap);
+			} else if (tileLayer.properties.contains("foregroundnocollide")) {
+				middlegroundLayer.add(tilemap);
 			} else {
 				if (collidableTileLayers == null)
 					collidableTileLayers = new Array<FlxTilemap>();
@@ -269,10 +275,10 @@ class TiledLevel extends TiledMap {
 		}
 	}
 
-	public function handlePlayerSnowPileCollision(player:Player,snowpile:SnowPile){
-			snowpile.handlePlayerCollision();
-			player.handleSnowPileCollision();
-		}
+	public function handlePlayerSnowPileCollision(player:Player, snowpile:SnowPile) {
+		snowpile.handlePlayerCollision();
+		player.handleSnowPileCollision();
+	}
 
 	public function collideWithEnemies(obj, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool {
 		//	IMPORTANT: Always collide the map with objects, not the other way around.
