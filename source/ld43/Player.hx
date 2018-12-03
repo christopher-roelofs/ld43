@@ -9,7 +9,7 @@ import flixel.input.gamepad.FlxGamepad;
 import ld43.EndState;
 
 class Player extends FlxSprite {
-	var mapState:MapState;
+	public var mapState:MapState;
 
 	public var speed:Float = 400;
 

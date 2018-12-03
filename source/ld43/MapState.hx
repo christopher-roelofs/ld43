@@ -2,7 +2,7 @@ package ld43;
 
 import ld43.TiledLevel;
 import ld43.Projectile;
-import ld43.Weather;
+
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
@@ -21,7 +21,7 @@ class MapState extends FlxSubState {
 	public var projectiles:FlxGroup;
 	public var score:FlxText;
 
-        public var weather:Weather;
+
 	public static var virtualPad:FlxVirtualPad;
 	private static var enemyRespawnTime:Int = 5; // seconds
 	private static var snowPileRespawnTime:Int = 15; // seconds
@@ -64,8 +64,6 @@ class MapState extends FlxSubState {
 		// Add middlegrounds
 		add(level.middlegroundLayer);
 
-                weather = new Weather(level.player.x, level.player.y);
-                add(weather);
 
 		destroySubStates = false;
 

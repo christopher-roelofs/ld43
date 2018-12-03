@@ -21,11 +21,17 @@ class Projectile extends FlxSprite
         public var collided:Bool;
 
         private var nextAnimation:String;
+
+        private var flyingEmitter:FlyingEmitter;
+        private var impactEmitter:ImpactEmitter;
+
+        private var player:Player;
         
         public function new(player:Player) 
 	{
 
                 trace("Creating projectile");
+                this.player = player;
                 var x = player.x;
                 var y = player.y;
                 
@@ -65,7 +71,8 @@ class Projectile extends FlxSprite
                 this.drag.x = this.drag.y = 400;
                 
                 collided = false;
-                
+                flyingEmitter = new FlyingEmitter(this);
+                player.mapState.add(flyingEmitter);
 	}
 
         public function setVelocityFromPlayerFacing(playerFacing:Int) {
@@ -95,10 +102,16 @@ class Projectile extends FlxSprite
                 
         }
 
+        public function addImpactParticles() {
+                impactEmitter = new ImpactEmitter(this);
+                player.mapState.add(impactEmitter);
+        }
+
         public function doGroundImpact() {
                 //animation.play("groundImpact");
                 //flyingSound.stop();
                 groundImpactSound.play();
+                addImpactParticles();
                 collided=true;
         }
 
@@ -106,10 +119,12 @@ class Projectile extends FlxSprite
                 //animation.play("targetImpact");
                 //flyingSound.stop();
                 targetImpactSound.play();
+                addImpactParticles();
                 collided=true;
         }
 
         public override function update(elapsed:Float):Void {
+                flyingEmitter.focusOn(this);
                 if(nextAnimation != null && animation.finished) {
                         animation.play(nextAnimation);
                         nextAnimation = null;
@@ -125,6 +140,10 @@ class Projectile extends FlxSprite
         }
         
         public function isFinished():Bool {
-                return collided && animation.finished;
+                if(collided) {
+                        trace("Particles: " + impactEmitter.countLiving());
+                }
+                return collided;
         }
+
 }
