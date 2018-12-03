@@ -19,6 +19,8 @@ class Enemy extends FlxSprite {
 	var _idleTmr:Float;
 	var _moveDir:Float;
         var level:TiledLevel;
+
+        public var chirpSound:FlxSound;
         
 	public var seesPlayer:Bool = false;
 	public var playerPos(default, null):FlxPoint;
@@ -40,6 +42,7 @@ class Enemy extends FlxSprite {
 		playerPos = FlxPoint.get();
 		animation.play("idle");
                 alive=true;
+                chirpSound = FlxG.sound.load(AssetPaths.squirrel_chirp__ogg, .1);
 		// scale.set(2,2);
 		// updateHitbox();
 	}
