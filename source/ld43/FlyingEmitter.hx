@@ -27,7 +27,7 @@ class FlyingEmitter extends FlxEmitter
                 makeParticles(4, 4, 0xAAAAAAAA, maxSize);
 		//collides = false;
                 this.focusOn(projectile);
-                super.start(false, .05, 40);
+                super.start(false, .1, 40);
                                 trace("Starting emitter at " + x + "," + y + " with " + countLiving() + " living particles");
 
 	}

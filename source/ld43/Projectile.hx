@@ -35,7 +35,7 @@ class Projectile extends FlxSprite
                 var x = player.x;
                 var y = player.y;
                 
-                if(player.facing == FlxObject.LEFT || player.facing == FlxObject.DOWN) {
+                if(player.facing == FlxObject.LEFT || player.facing == FlxObject.UP) {
                         x += player.width - 20;
 		}                
                 
