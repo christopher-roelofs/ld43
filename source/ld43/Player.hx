@@ -48,11 +48,12 @@ class Player extends FlxSprite {
 		loadGraphic(AssetPaths.snowman__png, true, 312, 312);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
-                animation.add("lr", [4, 5], 4, false);
+                animation.add("lr", [4, 5], 4, true);
+                
                 animation.add("lrthrow", [6,7], 10, false);
-                animation.add("u", [8, 9], 4, false);
+                animation.add("u", [8, 9], 4, true);
                 animation.add("uthrow", [10,11],10,false);
-		animation.add("d", [12, 13], 4, false);
+		animation.add("d", [12, 13], 4, true);
                 animation.add("dthrow", [14,15], 10, false);
                 animation.add("dead", [16,17,16,17,16,17,16,16], 4, false);
 
@@ -288,7 +289,6 @@ class Player extends FlxSprite {
                 trace("walking");
 		walkSound.play();
                 setNormalAnimation();
-		animation.curAnim.play();
 		return;
 	}
 
