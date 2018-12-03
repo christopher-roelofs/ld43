@@ -32,7 +32,7 @@ class Enemy extends FlxSprite {
 		animation.add("d", [0, 1, 0, 1], 6, false);
 		animation.add("lr", [2, 3, 2, 3], 6, false);
 		animation.add("u", [4, 5, 4, 5], 6, false);
-		animation.add("idle", [7,7,6,7,6,7], 6, false);
+		animation.add("idle", [6,6,7,6], 12, false);
 		animation.add("dead", [8, 8, 8], 1, false);
 		drag.x = drag.y = 10;
 		_brain = new FSM(idle);
