@@ -36,7 +36,7 @@ class EndState extends FlxState {
 		var bgImage = new FlxSprite(0, 0, Assets.getBitmapData("assets/images/endscreen.png"));
 		add(bgImage);
 
-		_btnRestart = new FlxSprite(280, 200, Assets.getBitmapData("assets/images/playagain.png"));
+		_btnRestart = new FlxSprite(260, 200, Assets.getBitmapData("assets/images/playagain.png"));
 		add(_btnRestart);
 
 		_btnHowTo = new FlxSprite(1050, 600, Assets.getBitmapData("assets/images/howto.png"));
