@@ -43,7 +43,7 @@ class StartState extends FlxState {
 
 		super.create();
 
-		FlxG.sound.playMusic(AssetPaths.title_theme__ogg, .5, true);
+		FlxG.sound.playMusic(AssetPaths.title_theme__ogg, .1, true);
 	}
 
 	private function clickLaunch():Void {
