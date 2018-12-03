@@ -12,7 +12,6 @@ class Projectile extends FlxSprite
 
         private var launchSound:FlxSound;
 
-        private var flyingSound:FlxSound;
 
         private var groundImpactSound:FlxSound;
 
@@ -53,7 +52,6 @@ class Projectile extends FlxSprite
 
                 //load audio
                 trace("Loading audio");
-                flyingSound = FlxG.sound.load(AssetPaths.snowball_flying__ogg,.1);
 
                 launchSound = FlxG.sound.load(AssetPaths.snowball_launch__ogg,.1);
                 launchSound.looped = false;
@@ -94,11 +92,8 @@ class Projectile extends FlxSprite
                 }
         }
         
-        public function doLaunch() {
-                //animation.play("flying");
-                
+        public function doLaunch() {                
                 launchSound.play();
-                //flyingSound.play();
                 
         }
 
@@ -108,16 +103,12 @@ class Projectile extends FlxSprite
         }
 
         public function doGroundImpact() {
-                //animation.play("groundImpact");
-                //flyingSound.stop();
                 groundImpactSound.play();
                 addImpactParticles();
                 collided=true;
         }
 
         public function doTargetImpact() {
-                //animation.play("targetImpact");
-                //flyingSound.stop();
                 targetImpactSound.play();
                 addImpactParticles();
                 collided=true;
