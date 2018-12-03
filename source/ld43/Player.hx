@@ -22,7 +22,7 @@ class Player extends FlxSprite {
 	public var _right:Bool;
 	public var walkSound:FlxSound;
 	public var currentState:String;
-
+        public var firing:Bool = false;
 	private var currentScale:Float = 1;
 	var actions = {
 		up: false,
@@ -30,7 +30,8 @@ class Player extends FlxSprite {
 		right: false,
 		down: false,
 		slide: false,
-		fire: false
+		fire: false,
+                moving: false
 	};
 	var lastActions = {
 		up: false,
@@ -38,7 +39,8 @@ class Player extends FlxSprite {
 		right: false,
 		down: false,
 		slide: false,
-		fire: false
+		fire: false,
+                moving: false
 	};
 
 	public function new(X:Float = 0, Y:Float = 0, state:MapState) {
@@ -47,11 +49,11 @@ class Player extends FlxSprite {
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
                 animation.add("lr", [4, 5], 4, false);
-                animation.add("lrthrow", [6,7], 4, false);
+                animation.add("lrthrow", [6,7], 10, false);
                 animation.add("u", [8, 9], 4, false);
-                animation.add("uthrow", [10,11],4,false);
+                animation.add("uthrow", [10,11],10,false);
 		animation.add("d", [12, 13], 4, false);
-                animation.add("dthrow", [14,15], 4, false);
+                animation.add("dthrow", [14,15], 10, false);
                 animation.add("dead", [16,17,16,17,16,17,16,16], 4, false);
 
 		drag.x = drag.y = 1600;
@@ -78,6 +80,10 @@ class Player extends FlxSprite {
 		}
 	};
 
+	public function handleSnowPileCollision() {
+		this.increaseMass();
+	};
+        
 	public function takeDamage() {
 		if (currentScale > .3) {
 			// trace(currentScale);
@@ -86,18 +92,10 @@ class Player extends FlxSprite {
 			updateHitbox();
 			this.currentScale = newScale;
 		} else {
-                        handleDeath();
+                        doDeath();
 		}
 	};
 
-        public function handleDeath() {
-                if(!alive) {
-                        return;
-                }
-                alive=false;
-                scale.set(.5, .5);
-                animation.play("dead");
-        }
                 
         
 	public function decreaseMass() {
@@ -108,7 +106,7 @@ class Player extends FlxSprite {
 			updateHitbox();
 			this.currentScale = newScale;
 		} else {
-		        handleDeath();
+		        doDeath();
 		}
 	};
 
@@ -154,26 +152,26 @@ class Player extends FlxSprite {
 		actions.left = _left;
 		actions.right = _right;
 		actions.fire = _fire;
+                actions.moving = _up || _down || _left || _right;
 	}
 
 	public function movement():Void {
-		if (actions.up || actions.down || actions.left || actions.right) {
-			updateAssetState("walking");
+                if(actions.moving) {
 			var mA:Float = 0;
 			if (actions.up) {
 				mA = -90;
 				if (actions.left)
-					mA -= 45;
+				mA -= 45;
 				else if (actions.right)
-					mA += 45;
+				mA += 45;
 
 				facing = FlxObject.UP;
 			} else if (actions.down) {
 				mA = 90;
 				if (actions.left)
-					mA += 45;
+				mA += 45;
 				else if (actions.right)
-					mA -= 45;
+				mA -= 45;
 
 				facing = FlxObject.DOWN;
 			} else if (actions.left) {
@@ -187,66 +185,31 @@ class Player extends FlxSprite {
 			velocity.set(speed, 0);
 			velocity.rotate(FlxPoint.weak(0, 0), mA);
 
-			if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE) {
-				switch (facing) {
-					case FlxObject.LEFT, FlxObject.RIGHT:
-						animation.play("lr");
-
-					case FlxObject.UP:
-						animation.play("u");
-
-					case FlxObject.DOWN:
-						animation.play("d");
-				}
-			} else {
-				if (animation.curAnim != null) {
-					animation.curAnim.curFrame = 0;
-					animation.curAnim.pause();
-				}
-			}
-		} else {
-			updateAssetState("standing");
+                        if(!firing) {       
+			        if ((velocity.x != 0 || velocity.y != 0)) {
+                                        doWalk();
+			        } else {
+				        if (animation.curAnim != null) {
+					        animation.curAnim.curFrame = 0;
+					        animation.curAnim.pause();
+				        }
+			        }
+                        }
+		} else if (!firing) {
+			doStand();
 		}
 	}
 
-	public function playWalkSound() {
-		trace("Playing walk sound");
-		walkSound.play();
-	}
-
-	public function stopWalkSound() {
-		trace("Stopping walk sound");
-		walkSound.stop();
-	}
-
-	public function updateAssetState(state:String) {
-		if (state == currentState) {
-			return;
-		}
-		trace("state: '" + currentState + "' -> '" + state + "'");
-		currentState = state;
-
-		switch (state) {
-			case "walking":
-				playWalkSound();
-				animation.play(state);
-				return;
-			case "standing":
-				stopWalkSound();
-		}
-	}
-
+        
+        
 	private function updateLastActions() {
 		lastActions.up = actions.up;
 		lastActions.down = actions.down;
 		lastActions.left = actions.left;
 		lastActions.right = actions.right;
 		lastActions.fire = actions.fire;
+                lastActions.moving = actions.moving;
 	}
-
-	public function handleSnowPileCollision() {
-		this.increaseMass();
-	};
 
 	override public function update(elapsed:Float):Void {
 
@@ -255,16 +218,17 @@ class Player extends FlxSprite {
 		        updateLastActions();                
 		        checkInput();
 
-		        movement();
-
 		        // fire key down
 		        if (actions.fire && !lastActions.fire) {
-			        trace("Firing");
-			        var snowball = new Projectile(x, y, facing);
-			        mapState.addProjectile(snowball);
-			        snowball.doLaunch();
-			        this.decreaseMass();
+                                doFire();
 		        }
+
+                        if(firing && animation.finished) {
+                                firing = false;
+                                doStand();
+                        }
+
+                        movement();
 
                 } else if(animation.finished) {
                         transitionAfterDeath();
@@ -278,4 +242,77 @@ class Player extends FlxSprite {
                 this.kill();
 		FlxG.switchState(endState);
         }
+
+
+        public function setNormalAnimation() {
+                switch (facing) {
+			case FlxObject.LEFT, FlxObject.RIGHT:
+			animation.play("lr");
+                        
+			case FlxObject.UP:
+			animation.play("u");
+                        
+			case FlxObject.DOWN:
+			animation.play("d");
+		}                
+        }
+
+        public function setFiringAnimation() {
+                switch (facing) {
+			case FlxObject.LEFT, FlxObject.RIGHT:
+			animation.play("lrthrow");
+
+			case FlxObject.UP:
+			animation.play("uthrow");
+
+			case FlxObject.DOWN:
+			animation.play("dthrow");
+                }                
+        }
+
+        private function doStand() {
+                if (currentState == "stand") return;
+                currentState = "stand";
+                trace("standing");
+		walkSound.stop();
+                setNormalAnimation();
+		if (animation.curAnim != null) {
+			animation.curAnim.curFrame = 0;
+			animation.curAnim.pause();
+		}
+        }
+
+        private function doWalk() {
+                if (currentState == "walk") return;
+                currentState = "walk";
+                trace("walking");
+		walkSound.play();
+                setNormalAnimation();
+		animation.curAnim.play();
+		return;
+	}
+
+        
+        private function doFire() {
+                currentState = "firing";
+                firing=true;
+                trace("firing");
+                var snowball = new Projectile(this);
+                setFiringAnimation();
+                animation.curAnim.curFrame = 0;
+		mapState.addProjectile(snowball);
+		snowball.doLaunch();
+                setFiringAnimation();
+		this.decreaseMass();
+        }
+
+        private function doDeath() {
+                if (currentState == "death") return;
+                trace("dying");
+                currentState = "death";
+                alive=false;
+                scale.set(.5, .5);
+                animation.play("dead");
+        }
+
 }

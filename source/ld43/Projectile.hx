@@ -22,11 +22,18 @@ class Projectile extends FlxSprite
 
         private var nextAnimation:String;
         
-        public function new(X:Float = 0, Y:Float = 0, playerFacing:Int) 
+        public function new(player:Player) 
 	{
 
                 trace("Creating projectile");
-                super(X, Y);
+                var x = player.x;
+                var y = player.y;
+                
+                if(player.facing == FlxObject.LEFT || player.facing == FlxObject.DOWN) {
+                        x += player.width - 20;
+		}                
+                
+                super(x, y);
 
                 trace("Loading graphic");
                 loadGraphic(AssetPaths.snowball__png, true, 20, 20);
@@ -53,7 +60,7 @@ class Projectile extends FlxSprite
                 targetImpactSound.looped = false;
 
                 trace("Setting velocity from player facing");
-                setVelocityFromPlayerFacing(playerFacing);
+                setVelocityFromPlayerFacing(player.facing);
 
                 this.drag.x = this.drag.y = 400;
                 
@@ -67,14 +74,12 @@ class Projectile extends FlxSprite
                 switch(playerFacing) {
                         case FlxObject.UP:
                         velocity.set(0,0-speed);
-                        x+=136;
                         return;
                         case FlxObject.DOWN:
                         velocity.set(0,speed);
                         return;
                         case FlxObject.LEFT:
                         velocity.set(0-speed,0);
-                        x+=136;
                         return;
                         case FlxObject.RIGHT:
                         velocity.set(speed,0);
