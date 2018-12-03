@@ -21,6 +21,7 @@ import openfl.Assets;
 import flixel.input.gamepad.FlxGamepad;
 import flash.display.BitmapData;
 import flixel.text.FlxText;
+import flixel.system.FlxSound;
 
 /**
  * @author Samuel Batista
@@ -55,6 +56,9 @@ class TiledLevel extends TiledMap {
 
 	private var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
+	public var snowPileSpawnSound:FlxSound;
+	public var snowPilepickupSound:FlxSound;
+
 	public function new(tiledLevel:Dynamic, state:MapState) {
 		super(tiledLevel);
 		imagesLayer = new FlxGroup();
@@ -68,6 +72,11 @@ class TiledLevel extends TiledMap {
 		// FlxG.log.redirectTraces = true;
 
 		FlxG.camera.setScrollBoundsRect(0, 0, fullWidth, fullHeight, true);
+
+		snowPileSpawnSound = FlxG.sound.load(AssetPaths.snowpile_spawn__ogg, .1);
+		snowPileSpawnSound.volume = .8;
+		snowPilepickupSound = FlxG.sound.load(AssetPaths.snowpile_pickup__ogg, .1);
+		snowPilepickupSound.volume = .8;
 
 		loadImages();
 		loadObjects(state);
@@ -129,6 +138,7 @@ class TiledLevel extends TiledMap {
 		var position:FlxPoint = pileSpawns[pileindex];
 		var pile = new SnowPile(position.x, position.x);
 		snowpileGroup.add(pile);
+		snowPileSpawnSound.play();
 	}
 
 	public function loadObjects(state:MapState) {
@@ -292,6 +302,7 @@ class TiledLevel extends TiledMap {
 	public function handlePlayerSnowPileCollision(player:Player, snowpile:SnowPile) {
 		snowpile.handlePlayerCollision();
 		player.handleSnowPileCollision();
+		snowPilepickupSound.play();
 	}
 
 	public function collideWithEnemies(obj, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool {

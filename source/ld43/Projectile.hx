@@ -49,6 +49,7 @@ class Projectile extends FlxSprite
                 groundImpactSound.looped = false;
                 
                 targetImpactSound = FlxG.sound.load(AssetPaths.snowball_target__ogg,.1);
+                targetImpactSound.volume = .6;
                 targetImpactSound.looped = false;
 
                 trace("Setting velocity from player facing");
