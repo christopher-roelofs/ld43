@@ -46,18 +46,24 @@ class Player extends FlxSprite {
 		loadGraphic(AssetPaths.snowman__png, true, 312, 312);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
+                animation.add("lr", [4, 5], 4, false);
+                animation.add("lrthrow", [6,7], 4, false);
+                animation.add("u", [8, 9], 4, false);
+                animation.add("uthrow", [10,11],4,false);
 		animation.add("d", [12, 13], 4, false);
-		animation.add("lr", [4, 5], 4, false);
-		animation.add("u", [8, 9], 4, false);
+                animation.add("dthrow", [14,15], 4, false);
+                animation.add("dead", [16,17,16,17,16,17,16,16], 4, false);
+
 		drag.x = drag.y = 1600;
 		walkSound = FlxG.sound.load(AssetPaths.snowman_walk_snow__ogg, .1);
 		currentState = "standing";
-		this.mapState = state;
+		this.mapState = state; 
 
 		var newScale:Float = this.currentScale - .5;
 		scale.set(newScale, newScale);
 		updateHitbox();
 		this.currentScale = newScale;
+                alive=true;
 	}
 
 	private function increaseMass() {
@@ -80,13 +86,20 @@ class Player extends FlxSprite {
 			updateHitbox();
 			this.currentScale = newScale;
 		} else {
-			// die
-			var endState:EndState = new EndState();
-			endState.score = score;
-			FlxG.switchState(endState);
+                        handleDeath();
 		}
 	};
 
+        public function handleDeath() {
+                if(!alive) {
+                        return;
+                }
+                alive=false;
+                scale.set(.5, .5);
+                animation.play("dead");
+        }
+                
+        
 	public function decreaseMass() {
 		if (currentScale > .3) {
 			// trace(currentScale);
@@ -95,10 +108,7 @@ class Player extends FlxSprite {
 			updateHitbox();
 			this.currentScale = newScale;
 		} else {
-			// die
-			var endState:EndState = new EndState();
-			endState.score = score;
-			FlxG.switchState(endState);
+		        handleDeath();
 		}
 	};
 
@@ -239,21 +249,33 @@ class Player extends FlxSprite {
 	};
 
 	override public function update(elapsed:Float):Void {
-		updateLastActions();
 
-		checkInput();
+                if(alive) {
+                                                
+		        updateLastActions();                
+		        checkInput();
 
-		movement();
+		        movement();
 
-		// fire key down
-		if (actions.fire && !lastActions.fire) {
-			trace("Firing");
-			var snowball = new Projectile(x, y, facing);
-			mapState.addProjectile(snowball);
-			snowball.doLaunch();
-			this.decreaseMass();
-		}
+		        // fire key down
+		        if (actions.fire && !lastActions.fire) {
+			        trace("Firing");
+			        var snowball = new Projectile(x, y, facing);
+			        mapState.addProjectile(snowball);
+			        snowball.doLaunch();
+			        this.decreaseMass();
+		        }
 
+                } else if(animation.finished) {
+                        transitionAfterDeath();
+                }
 		super.update(elapsed);
 	}
+
+        public function transitionAfterDeath() {
+                var endState:EndState = new EndState();
+		endState.score = score;
+                this.kill();
+		FlxG.switchState(endState);
+        }
 }
