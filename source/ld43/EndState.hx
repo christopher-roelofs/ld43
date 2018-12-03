@@ -22,6 +22,8 @@ class EndState extends FlxState
 {
 	var _btnRestart:FlxSprite;
 	var _btnExit:FlxSprite;
+	public var score:Int;
+	var scoreTxt:FlxText;
 
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -36,6 +38,13 @@ class EndState extends FlxState
 
 		_btnRestart = new FlxSprite(280,200,Assets.getBitmapData("assets/images/playagain.png"));
 		add(_btnRestart);
+
+		scoreTxt = new FlxText(750,520, 1000);
+		scoreTxt.scrollFactor.set(0, 0); 
+		scoreTxt.color = FlxColor.BLUE;
+		scoreTxt.size = 60;
+		scoreTxt.text = '' + score;
+		add(scoreTxt);
 
 
 		//_btnExit = new FlxSprite(800,800,Assets.getBitmapData("assets/images/exit.png"));

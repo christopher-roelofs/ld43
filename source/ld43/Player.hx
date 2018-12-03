@@ -6,6 +6,7 @@ import flixel.FlxSprite;
 import flixel.math.FlxPoint;
 import flixel.system.FlxSound;
 import flixel.input.gamepad.FlxGamepad;
+import ld43.EndState;
 
 class Player extends FlxSprite {
 	var mapState:MapState;
@@ -60,39 +61,44 @@ class Player extends FlxSprite {
 	}
 
 	private function increaseMass() {
-		//trace(currentScale);
+		// trace(currentScale);
 		if (currentScale < .7) {
 			var newScale:Float = this.currentScale + .03;
 			scale.set(newScale, newScale);
 			updateHitbox();
 			this.currentScale = newScale;
-		}
-		else {
+		} else {
 			score += 5;
 		}
 	};
 
 	public function takeDamage() {
 		if (currentScale > .3) {
-			//trace(currentScale);
+			// trace(currentScale);
 			var newScale:Float = this.currentScale - .0005;
 			scale.set(newScale, newScale);
 			updateHitbox();
 			this.currentScale = newScale;
 		} else {
 			// die
+			var endState:EndState = new EndState();
+			endState.score = score;
+			FlxG.switchState(endState);
 		}
 	};
 
 	public function decreaseMass() {
 		if (currentScale > .3) {
-			//trace(currentScale);
+			// trace(currentScale);
 			var newScale:Float = this.currentScale - .005;
 			scale.set(newScale, newScale);
 			updateHitbox();
 			this.currentScale = newScale;
 		} else {
 			// die
+			var endState:EndState = new EndState();
+			endState.score = score;
+			FlxG.switchState(endState);
 		}
 	};
 
