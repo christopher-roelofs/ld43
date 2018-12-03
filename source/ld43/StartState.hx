@@ -30,6 +30,7 @@ class StartState extends FlxState {
 	var _btnLaunch:FlxSprite;
 	var _btnHowTo:FlxSprite;
 
+        
 	override public function create():Void {
 		var bgImage = new FlxSprite(0, 0, Assets.getBitmapData("assets/images/startscreen.png"));
 		add(bgImage);
@@ -42,7 +43,7 @@ class StartState extends FlxState {
 
 		super.create();
 
-		// FlxG.sound.playMusic(AssetPaths.start_soundtrack__ogg, .5, true);
+		FlxG.sound.playMusic(AssetPaths.title_theme__ogg, .5, true);
 	}
 
 	private function clickLaunch():Void {
