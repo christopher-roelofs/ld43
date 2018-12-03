@@ -28,15 +28,18 @@ class StartState extends FlxState {
 	public var file:String;
 
 	var _btnLaunch:FlxSprite;
+	var _btnHowTo:FlxSprite;
 
 	override public function create():Void {
-
-		var bgImage = new FlxSprite(0,0,Assets.getBitmapData("assets/images/startscreen.png"));
+		var bgImage = new FlxSprite(0, 0, Assets.getBitmapData("assets/images/startscreen.png"));
 		add(bgImage);
 
-		_btnLaunch = new FlxSprite(1260,60,Assets.getBitmapData("assets/images/play.png"));
+		_btnLaunch = new FlxSprite(1240, 20, Assets.getBitmapData("assets/images/play.png"));
 		add(_btnLaunch);
-		
+
+		_btnHowTo = new FlxSprite(1280, 490, Assets.getBitmapData("assets/images/howto.png"));
+		add(_btnHowTo);
+
 		super.create();
 
 		// FlxG.sound.playMusic(AssetPaths.start_soundtrack__ogg, .5, true);
@@ -48,12 +51,23 @@ class StartState extends FlxState {
 		FlxG.switchState(mapState);
 	}
 
+	private function clickHowTo():Void {
+		var howToState = new HowToState();
+		FlxG.switchState(howToState);
+	}
+
 	override public function update(elapsed:Float):Void {
 		super.update(elapsed);
 
 		if (FlxG.mouse.overlaps(_btnLaunch)) {
 			if (FlxG.mouse.justPressed) {
 				clickLaunch();
+			}
+		}
+
+		if (FlxG.mouse.overlaps(_btnHowTo)) {
+			if (FlxG.mouse.justPressed) {
+				clickHowTo();
 			}
 		}
 	}
